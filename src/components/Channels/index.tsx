@@ -252,6 +252,7 @@ export function Channels() {
     exclusive_topics?: string[];
     groups?: Record<string, unknown>;
     primary?: boolean;
+    allow_from?: string[];
   }
   const [telegramAccounts, setTelegramAccounts] = useState<TelegramAccountInfo[]>([]);
   const [showAddAccountDialog, setShowAddAccountDialog] = useState(false);
@@ -1350,6 +1351,69 @@ export function Channels() {
                                     );
                                   })()}
 
+                                  {/* Per-account DM Allowed Users */}
+                                  {(acct.dm_policy === 'pairing' || acct.dm_policy === 'allowlist') && (() => {
+                                    const dmUsers = acct.allow_from || [];
+                                    const updateDmUsers = (newList: string[]) => {
+                                      const updated = telegramAccounts.map(a => a.id === acct.id ? { ...a, allow_from: newList } : a);
+                                      setTelegramAccounts(updated);
+                                    };
+                                    return (
+                                      <div className="p-3 bg-dark-600 rounded-lg border border-dark-500 space-y-2">
+                                        <label className="text-xs text-gray-400 font-semibold">Allowed DM Users (User ID)</label>
+                                        <div className="flex gap-2">
+                                          <input
+                                            type="text"
+                                            placeholder="e.g. 123456789"
+                                            className="input-base text-xs flex-1"
+                                            id={`dm-user-${acct.id}`}
+                                            onKeyDown={(e) => {
+                                              if (e.key === 'Enter') {
+                                                const val = (e.target as HTMLInputElement).value.trim();
+                                                if (val && !dmUsers.includes(val)) {
+                                                  updateDmUsers([...dmUsers, val]);
+                                                  (e.target as HTMLInputElement).value = '';
+                                                }
+                                              }
+                                            }}
+                                          />
+                                          <button
+                                            onClick={() => {
+                                              const input = document.getElementById(`dm-user-${acct.id}`) as HTMLInputElement;
+                                              const val = input?.value.trim();
+                                              if (val && !dmUsers.includes(val)) {
+                                                updateDmUsers([...dmUsers, val]);
+                                                input.value = '';
+                                              }
+                                            }}
+                                            className="btn-secondary p-1.5"
+                                          >
+                                            <Plus size={14} />
+                                          </button>
+                                        </div>
+                                        <div className="space-y-1 max-h-32 overflow-y-auto">
+                                          {dmUsers.map(id => (
+                                            <div key={id} className="flex items-center justify-between text-xs bg-dark-500 px-2.5 py-1 rounded-lg border border-dark-400">
+                                              <span className="font-mono text-gray-300">{id}</span>
+                                              <button
+                                                onClick={() => updateDmUsers(dmUsers.filter(u => u !== id))}
+                                                className="text-gray-500 hover:text-red-400"
+                                              >
+                                                <Trash2 size={12} />
+                                              </button>
+                                            </div>
+                                          ))}
+                                          {dmUsers.length === 0 && (
+                                            <p className="text-[10px] text-gray-500 italic text-center py-1">
+                                              {acct.dm_policy === 'pairing' ? 'Users added via pairing flow. You can also add manually.' : 'No users allowed. Add user IDs above.'}
+                                            </p>
+                                          )}
+                                        </div>
+                                        <p className="text-[10px] text-gray-500">Saved per-account as <code className="px-1 py-0.5 bg-dark-500 rounded">allowFrom</code>. Inherited from primary bot if empty.</p>
+                                      </div>
+                                    );
+                                  })()}
+
                                   <div className="flex items-center gap-2 mt-2 pt-2 border-t border-dark-400">
                                     <input
                                       type="checkbox"
@@ -1412,7 +1476,10 @@ export function Channels() {
                               <button
                                 onClick={async () => {
                                   if (newAccountId && newAccountToken) {
-                                    await handleSaveAccount({ id: newAccountId, bot_token: newAccountToken });
+                                    // Pre-populate allow_from from primary bot
+                                    const primaryBot = telegramAccounts.find(a => a.primary);
+                                    const inheritedAllowFrom = primaryBot?.allow_from?.filter(id => id !== '*');
+                                    await handleSaveAccount({ id: newAccountId, bot_token: newAccountToken, allow_from: inheritedAllowFrom && inheritedAllowFrom.length > 0 ? inheritedAllowFrom : undefined });
                                     setNewAccountId('');
                                     setNewAccountToken('');
                                     setShowAddAccountDialog(false);

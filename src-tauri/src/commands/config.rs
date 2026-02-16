@@ -1626,6 +1626,8 @@ pub struct TelegramAccount {
     pub exclusive_topics: Option<Vec<String>>,
     pub groups: Option<serde_json::Value>,
     pub primary: Option<bool>,
+    #[serde(alias = "allowFrom", alias = "allow_from")]
+    pub allow_from: Option<Vec<String>>,
 }
 
 /// Get all Telegram bot accounts
@@ -1668,6 +1670,13 @@ pub async fn get_telegram_accounts() -> Result<Vec<TelegramAccount>, String> {
                 },
                 groups: acct_val.get("groups").cloned(),
                 primary: None, // Will be set below
+                allow_from: acct_val.get("allowFrom")
+                    .and_then(|v| v.as_array())
+                    .map(|arr| arr.iter().filter_map(|v| {
+                        if let Some(s) = v.as_str() { Some(s.to_string()) }
+                        else if let Some(n) = v.as_i64() { Some(n.to_string()) }
+                        else { None }
+                    }).collect()),
             });
         }
     }
@@ -1685,6 +1694,13 @@ pub async fn get_telegram_accounts() -> Result<Vec<TelegramAccount>, String> {
                     exclusive_topics: None,
                     groups: config.pointer("/channels/telegram/groups").cloned(),
                     primary: None,
+                    allow_from: config.pointer("/channels/telegram/allowFrom")
+                        .and_then(|v| v.as_array())
+                        .map(|arr| arr.iter().filter_map(|v| {
+                            if let Some(s) = v.as_str() { Some(s.to_string()) }
+                            else if let Some(n) = v.as_i64() { Some(n.to_string()) }
+                            else { None }
+                        }).collect()),
                 });
             }
         }
@@ -1769,6 +1785,32 @@ pub async fn save_telegram_account(account: TelegramAccount) -> Result<String, S
         // Fix for validation error: dmPolicy="open" requires allowFrom to include "*"
         if dp == "open" {
              acct_obj["allowFrom"] = json!(["*"]);
+        } else if let Some(ref af) = account.allow_from {
+            if !af.is_empty() {
+                // Convert string IDs to numbers where possible for Core compatibility
+                let allow_vals: Vec<serde_json::Value> = af.iter().map(|id| {
+                    if let Ok(n) = id.parse::<i64>() { json!(n) } else { json!(id) }
+                }).collect();
+                acct_obj["allowFrom"] = json!(allow_vals);
+            }
+        } else {
+            // Auto-inherit from primary bot if no explicit allow_from provided
+            let primary_id = load_manager_config()
+                .unwrap_or(json!({}))
+                .pointer("/primaryBotAccount")
+                .and_then(|v| v.as_str())
+                .map(|s| s.to_string());
+            if let Some(pid) = primary_id {
+                if pid != account.id {
+                    // Read primary account's allowFrom
+                    if let Some(primary_allow) = config.pointer(&format!("/channels/telegram/accounts/{}/allowFrom", pid))
+                        .and_then(|v| v.as_array()) {
+                        if !primary_allow.is_empty() && primary_allow.iter().any(|v| v.as_str() != Some("*")) {
+                            acct_obj["allowFrom"] = json!(primary_allow);
+                        }
+                    }
+                }
+            }
         }
     }
     if let Some(sm) = &account.stream_mode {
