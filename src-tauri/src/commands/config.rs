@@ -2,7 +2,7 @@ use crate::models::{
     AIConfigOverview, ChannelConfig, ConfiguredModel, ConfiguredProvider,
     MCPConfig, ModelConfig, OfficialProvider, SuggestedModel,
 };
-use crate::utils::{file, platform, shell};
+use crate::utils::{file, platform, shell, log_sanitizer};
 use log::{debug, error, info, warn};
 use serde_json::{json, Value};
 use serde::{Deserialize, Serialize};
@@ -81,7 +81,7 @@ pub async fn save_config(config: Value) -> Result<String, String> {
     info!("[Save Config] Saving openclaw.json configuration...");
     debug!(
         "[Save Config] Configuration content: {}",
-        serde_json::to_string_pretty(&config).unwrap_or_default()
+        log_sanitizer::sanitize(&serde_json::to_string_pretty(&config).unwrap_or_default())
     );
     match save_openclaw_config(&config) {
         Ok(_) => {
@@ -171,7 +171,7 @@ pub async fn get_or_create_gateway_token() -> Result<String, String> {
 
     // Generate new token
     let new_token = generate_token();
-    info!("[Gateway Token] Generated new Token: {}...", &new_token[..8]);
+    info!("[Gateway Token] Generated new Token");
 
     // Ensure path exists
     if config.get("gateway").is_none() {
@@ -201,7 +201,7 @@ pub async fn get_dashboard_url() -> Result<String, String> {
     let token = get_or_create_gateway_token().await?;
     let url = format!("http://localhost:18789?token={}", token);
 
-    info!("[Dashboard URL] URL: {}...", &url[..50.min(url.len())]);
+    info!("[Dashboard URL] URL generated");
     Ok(url)
 }
 
