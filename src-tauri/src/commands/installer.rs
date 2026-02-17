@@ -1,4 +1,4 @@
-use crate::utils::{platform, shell};
+use crate::utils::{log_sanitizer, platform, shell};
 use serde::{Deserialize, Serialize};
 use tauri::command;
 use log::{info, warn, error, debug};
@@ -685,7 +685,7 @@ pub async fn init_openclaw_config() -> Result<InstallResult, String> {
     match result {
         Ok(output) => {
             info!("[Init Config] Configuration initialized successfully");
-            debug!("[Init Config] Command output: {}", output);
+            debug!("[Init Config] Command output: {}", log_sanitizer::sanitize(&output));
             Ok(InstallResult {
                 success: true,
                 message: "Configuration initialized successfully!".to_string(),

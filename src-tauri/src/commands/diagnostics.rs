@@ -1,5 +1,5 @@
 use crate::models::{AITestResult, ChannelTestResult, DiagnosticResult, SystemInfo};
-use crate::utils::{platform, shell};
+use crate::utils::{log_sanitizer, platform, shell};
 use tauri::command;
 use log::{info, warn, debug};
 
@@ -188,7 +188,7 @@ pub async fn test_ai_connection() -> Result<AITestResult, String> {
 
     match result {
         Ok(output) => {
-            debug!("[AI Test] Raw output: {}", output);
+            debug!("[AI Test] Raw output: {}", log_sanitizer::sanitize(&output));
             // Filter out warning messages
             let filtered: String = output
                 .lines()
@@ -203,7 +203,7 @@ pub async fn test_ai_connection() -> Result<AITestResult, String> {
             if success {
                 info!("[AI Test] ✓ AI connection test successful");
             } else {
-                warn!("[AI Test] ✗ AI connection test failed: {}", filtered);
+                warn!("[AI Test] ✗ AI connection test failed: {}", log_sanitizer::sanitize(&filtered));
             }
             
             Ok(AITestResult {

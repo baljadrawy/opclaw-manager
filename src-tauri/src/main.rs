@@ -9,12 +9,19 @@ mod models;
 mod utils;
 
 use commands::{config, diagnostics, installer, process, service, skills};
+use utils::log_sanitizer;
+use std::io::Write;
 
 fn main() {
     // Initialize logging - show info level logs by default
     env_logger::Builder::from_env(
         env_logger::Env::default().default_filter_or("info")
-    ).init();
+    )
+    .format(|buf, record| {
+        let sanitized = log_sanitizer::sanitize(&record.args().to_string());
+        writeln!(buf, "{} [{}] {}", record.level(), record.target(), sanitized)
+    })
+    .init();
     
     log::info!("🦞 OpenClaw Manager started");
 
@@ -34,6 +41,7 @@ fn main() {
             // Process management
             process::check_openclaw_installed,
             process::get_openclaw_version,
+            process::check_secure_version,
             process::check_port_in_use,
             // Configuration management
             config::get_config,

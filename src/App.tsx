@@ -51,6 +51,11 @@ interface UpdateResult {
   error?: string;
 }
 
+interface SecureVersionInfo {
+  current_version: string;
+  is_secure: boolean;
+}
+
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean, error: Error | null }> {
   constructor(props: { children: React.ReactNode }) {
     super(props);
@@ -98,6 +103,10 @@ function App() {
   const [updating, setUpdating] = useState(false);
   const [updateResult, setUpdateResult] = useState<UpdateResult | null>(null);
 
+  // Security check state
+  const [secureVersionInfo, setSecureVersionInfo] = useState<SecureVersionInfo | null>(null);
+  const [showSecurityBanner, setShowSecurityBanner] = useState(false);
+
   // Check environment
   const checkEnvironment = useCallback(async () => {
     if (!isTauri()) {
@@ -132,6 +141,23 @@ function App() {
       }
     } catch (e) {
       appLogger.error('Update check failed', e);
+    }
+  }, []);
+
+  // Check security version
+  const checkSecurity = useCallback(async () => {
+    if (!isTauri()) return;
+
+    appLogger.info('Checking OpenClaw version security...');
+    try {
+      const info = await invoke<SecureVersionInfo>('check_secure_version');
+      appLogger.info('Security check result', info);
+      setSecureVersionInfo(info);
+      if (!info.is_secure) {
+        setShowSecurityBanner(true);
+      }
+    } catch (e) {
+      appLogger.error('Security check failed', e);
     }
   }, []);
 
@@ -175,6 +201,15 @@ function App() {
     }, 2000);
     return () => clearTimeout(timer);
   }, [checkUpdate]);
+
+  // Check security after startup
+  useEffect(() => {
+    if (!isTauri()) return;
+    const timer = setTimeout(() => {
+      checkSecurity();
+    }, 1000); // Check shortly after startup
+    return () => clearTimeout(timer);
+  }, [checkSecurity]);
 
   // Periodically get service status
   useEffect(() => {
@@ -261,6 +296,38 @@ function App() {
     <div className="flex h-screen bg-dark-900 overflow-hidden">
       {/* Background decoration */}
       <div className="fixed inset-0 bg-gradient-radial pointer-events-none" />
+
+      {/* Security Banner (High Priority) */}
+      <AnimatePresence>
+        {showSecurityBanner && secureVersionInfo && !secureVersionInfo.is_secure && (
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-red-600 to-orange-600 shadow-lg"
+          >
+            <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <AlertCircle size={20} className="text-white" />
+                <div>
+                  <p className="text-sm font-bold text-white">
+                    Security Warning: Your OpenClaw version ({secureVersionInfo.current_version}) is insecure.
+                  </p>
+                  <p className="text-xs text-white/90">
+                    A version &ge; 2026.1.29 is required. Please update immediately.
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowSecurityBanner(false)}
+                className="p-1.5 hover:bg-white/20 rounded-lg transition-colors text-white/90 hover:text-white"
+              >
+                <X size={16} />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Update banner */}
       <AnimatePresence>
