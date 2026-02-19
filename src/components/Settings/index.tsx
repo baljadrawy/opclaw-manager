@@ -12,10 +12,15 @@ import {
   X,
   Activity,
   Globe,
-  FileText
+  FileText,
+  Download,
+  RefreshCw,
+  CheckCircle,
+  ArrowUpCircle
 } from 'lucide-react';
 import clsx from 'clsx';
 import { appLogger } from '../../lib/logger';
+import { isTauri } from '../../lib/tauri';
 
 interface InstallResult {
   success: boolean;
@@ -70,6 +75,18 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
   const [showUninstallConfirm, setShowUninstallConfirm] = useState(false);
   const [uninstalling, setUninstalling] = useState(false);
   const [uninstallResult, setUninstallResult] = useState<InstallResult | null>(null);
+
+  // Manager self-update states
+  const [managerChecking, setManagerChecking] = useState(false);
+  const [managerUpdateAvailable, setManagerUpdateAvailable] = useState(false);
+  const [managerUpdateVersion, setManagerUpdateVersion] = useState<string | null>(null);
+  const [managerUpdateBody, setManagerUpdateBody] = useState<string | null>(null);
+  const [managerDownloading, setManagerDownloading] = useState(false);
+  const [managerDownloadProgress, setManagerDownloadProgress] = useState(0);
+  const [managerUpdateDone, setManagerUpdateDone] = useState(false);
+  const [managerUpdateError, setManagerUpdateError] = useState<string | null>(null);
+  const [managerUpdateObj, setManagerUpdateObj] = useState<any>(null);
+  const [managerCheckDone, setManagerCheckDone] = useState(false);
 
   // New Feature States
   const [heartbeat, setHeartbeat] = useState<HeartbeatConfig>({ every: null, target: null });
@@ -195,6 +212,75 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
       });
     } finally {
       setUninstalling(false);
+    }
+  };
+
+  // Manager self-update: check for updates
+  const checkManagerUpdate = async () => {
+    if (!isTauri()) return;
+    setManagerChecking(true);
+    setManagerUpdateError(null);
+    setManagerUpdateAvailable(false);
+    setManagerCheckDone(false);
+    setManagerUpdateDone(false);
+    try {
+      const { check } = await import('@tauri-apps/plugin-updater');
+      const update = await check();
+      if (update) {
+        setManagerUpdateAvailable(true);
+        setManagerUpdateVersion(update.version);
+        setManagerUpdateBody(update.body || null);
+        setManagerUpdateObj(update);
+      } else {
+        setManagerCheckDone(true);
+      }
+    } catch (e: any) {
+      appLogger.error('Manager update check failed', e);
+      setManagerUpdateError(e?.message || String(e));
+    } finally {
+      setManagerChecking(false);
+    }
+  };
+
+  // Manager self-update: download & install
+  const downloadManagerUpdate = async () => {
+    if (!managerUpdateObj) return;
+    setManagerDownloading(true);
+    setManagerDownloadProgress(0);
+    setManagerUpdateError(null);
+    try {
+      let downloaded = 0;
+      let contentLength = 1;
+      await managerUpdateObj.downloadAndInstall((event: any) => {
+        switch (event.event) {
+          case 'Started':
+            contentLength = event.data.contentLength || 1;
+            break;
+          case 'Progress':
+            downloaded += event.data.chunkLength;
+            setManagerDownloadProgress(Math.min(100, Math.round((downloaded / contentLength) * 100)));
+            break;
+          case 'Finished':
+            setManagerDownloadProgress(100);
+            break;
+        }
+      });
+      setManagerUpdateDone(true);
+    } catch (e: any) {
+      appLogger.error('Manager update download failed', e);
+      setManagerUpdateError(e?.message || String(e));
+    } finally {
+      setManagerDownloading(false);
+    }
+  };
+
+  // Manager self-update: restart app
+  const restartApp = async () => {
+    try {
+      const { relaunch } = await import('@tauri-apps/plugin-process');
+      await relaunch();
+    } catch (e: any) {
+      appLogger.error('Relaunch failed', e);
     }
   };
 
@@ -596,6 +682,110 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
                 <p className="text-xs text-gray-500">~/.openclaw</p>
               </div>
             </button>
+          </div>
+        </div>
+
+        {/* Manager Update */}
+        <div className="bg-dark-700 rounded-2xl p-6 border border-dark-500">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+              <ArrowUpCircle size={20} className="text-emerald-400" />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-semibold text-white">Manager Update</h3>
+              <p className="text-xs text-gray-500">Keep OpenClaw Manager up to date</p>
+            </div>
+            <span className="text-xs font-mono text-gray-500 bg-dark-600 px-2 py-1 rounded">v0.0.12</span>
+          </div>
+
+          <div className="space-y-4">
+            {/* Check for updates button */}
+            {!managerUpdateAvailable && !managerUpdateDone && (
+              <button
+                onClick={checkManagerUpdate}
+                disabled={managerChecking}
+                className="w-full flex items-center gap-3 p-4 bg-dark-600 rounded-lg hover:bg-dark-500 transition-colors text-left disabled:opacity-50"
+              >
+                {managerChecking ? (
+                  <Loader2 size={18} className="text-emerald-400 animate-spin" />
+                ) : (
+                  <RefreshCw size={18} className="text-emerald-400" />
+                )}
+                <div className="flex-1">
+                  <p className="text-sm text-white">{managerChecking ? 'Checking...' : 'Check for Updates'}</p>
+                  <p className="text-xs text-gray-500">Check GitHub for the latest Manager version</p>
+                </div>
+              </button>
+            )}
+
+            {/* Up to date message */}
+            {managerCheckDone && !managerUpdateAvailable && (
+              <div className="flex items-center gap-3 p-4 bg-emerald-900/20 rounded-lg border border-emerald-800/30">
+                <CheckCircle size={18} className="text-emerald-400" />
+                <p className="text-sm text-emerald-300">You're on the latest version!</p>
+              </div>
+            )}
+
+            {/* Update available */}
+            {managerUpdateAvailable && !managerUpdateDone && (
+              <div className="p-4 bg-dark-600 rounded-lg space-y-3">
+                <div className="flex items-center gap-2">
+                  <Download size={16} className="text-emerald-400" />
+                  <span className="text-sm font-medium text-white">Update available: v{managerUpdateVersion}</span>
+                </div>
+                {managerUpdateBody && (
+                  <p className="text-xs text-gray-400 whitespace-pre-line max-h-32 overflow-y-auto">{managerUpdateBody}</p>
+                )}
+
+                {/* Download progress */}
+                {managerDownloading && (
+                  <div className="space-y-1">
+                    <div className="w-full bg-dark-500 rounded-full h-2">
+                      <div
+                        className="bg-gradient-to-r from-emerald-500 to-claw-500 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${managerDownloadProgress}%` }}
+                      />
+                    </div>
+                    <p className="text-xs text-gray-500 text-right">{managerDownloadProgress}%</p>
+                  </div>
+                )}
+
+                {!managerDownloading && (
+                  <button
+                    onClick={downloadManagerUpdate}
+                    className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-gradient-to-r from-emerald-600 to-claw-600 hover:from-emerald-500 hover:to-claw-500 text-white text-sm font-medium rounded-lg transition-all"
+                  >
+                    <Download size={16} />
+                    Download & Install
+                  </button>
+                )}
+              </div>
+            )}
+
+            {/* Update installed - restart */}
+            {managerUpdateDone && (
+              <div className="p-4 bg-emerald-900/20 rounded-lg border border-emerald-800/30 space-y-3">
+                <div className="flex items-center gap-2">
+                  <CheckCircle size={16} className="text-emerald-400" />
+                  <span className="text-sm font-medium text-emerald-300">Update installed successfully!</span>
+                </div>
+                <button
+                  onClick={restartApp}
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium rounded-lg transition-colors"
+                >
+                  <RefreshCw size={16} />
+                  Restart Now
+                </button>
+              </div>
+            )}
+
+            {/* Error message */}
+            {managerUpdateError && (
+              <div className="flex items-start gap-2 p-3 bg-red-900/20 rounded-lg border border-red-800/30">
+                <AlertTriangle size={16} className="text-red-400 mt-0.5 shrink-0" />
+                <p className="text-xs text-red-300">{managerUpdateError}</p>
+              </div>
+            )}
           </div>
         </div>
 

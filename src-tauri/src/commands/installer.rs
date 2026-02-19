@@ -1317,18 +1317,19 @@ fn compare_versions(current: &str, latest: &str) -> bool {
     let current = current.trim().trim_start_matches('v');
     let latest = latest.trim().trim_start_matches('v');
 
-    // Split version numbers
-    let current_parts: Vec<u32> = current
-        .split('.')
-        .filter_map(|s| s.parse().ok())
-        .collect();
-    let latest_parts: Vec<u32> = latest
-        .split('.')
-        .filter_map(|s| s.parse().ok())
-        .collect();
+    // Helper to parse version string into numeric parts (splitting by . and -)
+    let parse_version = |v: &str| -> Vec<u32> {
+        v.split(|c| c == '.' || c == '-')
+            .filter_map(|s| s.parse().ok())
+            .collect()
+    };
+
+    let current_parts = parse_version(current);
+    let latest_parts = parse_version(latest);
 
     // Compare each part
-    for i in 0..3 {
+    let max_len = std::cmp::max(current_parts.len(), latest_parts.len());
+    for i in 0..max_len {
         let c = current_parts.get(i).unwrap_or(&0);
         let l = latest_parts.get(i).unwrap_or(&0);
         if l > c {
@@ -1423,3 +1424,4 @@ openclaw --version
         }),
     }
 }
+
