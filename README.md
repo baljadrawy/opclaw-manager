@@ -203,6 +203,19 @@ Output in `src-tauri/target/release/bundle/`:
 
 ---
 
+---
+
+## 🆕 Changelog
+
+### v0.0.13
+- **Fixed Service Stop**: The "Stop" button now reliably terminates the OpenClaw process (including force kill fallback), preventing zombie processes and Bonjour naming conflicts.
+- **Fixed Service Restart**: The "Restart" button now utilizes the robust stop logic to ensure clean restarts.
+- **Fixed Telegram `/restart`**: Implemented a **Service Supervisor** that automatically revives the gateway when it is restarted via Telegram command.
+- **Fixed Supervisor Crash**: Resolved an `EBADF` crash on Windows by detaching stdio for the supervised background process.
+- **Config Cleanup**: Removed invalid keys (`timezone`, `logLevel`) from `openclaw.json` to pass doctor checks.
+
+---
+
 ## 🤝 Contributing
 
 1. Fork the project

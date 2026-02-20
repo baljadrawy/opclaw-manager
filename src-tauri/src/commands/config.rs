@@ -3279,9 +3279,9 @@ pub async fn get_workspace_config() -> Result<WorkspaceConfig, String> {
 
     let workspace = config.pointer("/agents/defaults/workspace")
         .and_then(|v| v.as_str()).map(|s| s.to_string());
-    let timezone = config.pointer("/agents/defaults/timezone")
+    let timezone = config.pointer("/manager/timezone")
         .and_then(|v| v.as_str()).map(|s| s.to_string());
-    let time_format = config.pointer("/agents/defaults/timeFormat")
+    let time_format = config.pointer("/manager/time_format")
         .and_then(|v| v.as_str()).map(|s| s.to_string());
     let skip_bootstrap = config.pointer("/agents/defaults/skipBootstrap")
         .and_then(|v| v.as_bool()).unwrap_or(false);
@@ -3306,29 +3306,37 @@ pub async fn save_workspace_config(
     if config.get("agents").is_none() { config["agents"] = json!({}); }
     if config["agents"].get("defaults").is_none() { config["agents"]["defaults"] = json!({}); }
 
-    let defaults = config["agents"]["defaults"].as_object_mut().unwrap();
+    // Set or remove each field in agents.defaults
+    if let Some(defaults) = config.pointer_mut("/agents/defaults").and_then(|v| v.as_object_mut()) {
+        match &workspace {
+            Some(w) if !w.is_empty() => { defaults.insert("workspace".into(), json!(w)); }
+            _ => { defaults.remove("workspace"); }
+        }
+        if skip_bootstrap {
+            defaults.insert("skipBootstrap".into(), json!(true));
+        } else {
+            defaults.remove("skipBootstrap");
+        }
+        match bootstrap_max_chars {
+            Some(max) => { defaults.insert("bootstrapMaxChars".into(), json!(max)); }
+            None => { defaults.remove("bootstrapMaxChars"); }
+        }
+        // Remove timezone/timeFormat from defaults if present (migrate to manager)
+        defaults.remove("timezone");
+        defaults.remove("timeFormat");
+    }
 
-    // Set or remove each field
-    match &workspace {
-        Some(w) if !w.is_empty() => { defaults.insert("workspace".into(), json!(w)); }
-        _ => { defaults.remove("workspace"); }
-    }
-    match &timezone {
-        Some(tz) if !tz.is_empty() => { defaults.insert("timezone".into(), json!(tz)); }
-        _ => { defaults.remove("timezone"); }
-    }
-    match &time_format {
-        Some(tf) if !tf.is_empty() => { defaults.insert("timeFormat".into(), json!(tf)); }
-        _ => { defaults.remove("timeFormat"); }
-    }
-    if skip_bootstrap {
-        defaults.insert("skipBootstrap".into(), json!(true));
-    } else {
-        defaults.remove("skipBootstrap");
-    }
-    match bootstrap_max_chars {
-        Some(max) => { defaults.insert("bootstrapMaxChars".into(), json!(max)); }
-        None => { defaults.remove("bootstrapMaxChars"); }
+    // Set manager fields
+    if config.get("manager").is_none() { config["manager"] = json!({}); }
+    if let Some(manager) = config.get_mut("manager").and_then(|v| v.as_object_mut()) {
+        match &timezone {
+            Some(tz) if !tz.is_empty() => { manager.insert("timezone".into(), json!(tz)); }
+            _ => { manager.remove("timezone"); }
+        }
+        match &time_format {
+            Some(tf) if !tf.is_empty() => { manager.insert("time_format".into(), json!(tf)); }
+            _ => { manager.remove("time_format"); }
+        }
     }
 
     save_openclaw_config(&config)?;
@@ -3523,8 +3531,9 @@ pub async fn get_gateway_config() -> Result<GatewayConfig, String> {
         .map(|v| v as u16)
         .unwrap_or(3000);
 
-    let log_level = config.pointer("/gateway/logLevel")
+    let log_level = config.pointer("/manager/log_level")
         .and_then(|v| v.as_str())
+        .or_else(|| config.pointer("/gateway/logLevel").and_then(|v| v.as_str())) // Legacy fallback
         .map(|s| s.to_string())
         .unwrap_or_else(|| "info".to_string());
 
@@ -3543,7 +3552,17 @@ pub async fn save_gateway_config(port: u16, log_level: String) -> Result<String,
 
     if let Some(gateway) = config.get_mut("gateway").and_then(|v| v.as_object_mut()) {
         gateway.insert("port".to_string(), json!(port));
-        gateway.insert("logLevel".to_string(), json!(log_level));
+        // Remove legacy logLevel if exists
+        gateway.remove("logLevel");
+        gateway.remove("log_level");
+    }
+
+    if config.get("manager").is_none() {
+        config["manager"] = json!({});
+    }
+
+    if let Some(manager) = config.get_mut("manager").and_then(|v| v.as_object_mut()) {
+        manager.insert("log_level".to_string(), json!(log_level));
     }
     
     save_openclaw_config(&config)?;

@@ -2,7 +2,13 @@ use crate::models::ServiceStatus;
 use crate::utils::shell;
 use tauri::command;
 use std::process::Command;
-use log::{info, warn, debug};
+use log::{info, warn, debug, error};
+use std::sync::atomic::{AtomicBool, Ordering};
+use std::thread;
+use std::time::Duration;
+
+// Track if service stop was intentional (manual stop) vs unexpected (crash/restart command)
+static INTENTIONAL_STOP: AtomicBool = AtomicBool::new(false);
 
 #[cfg(windows)]
 use std::os::windows::process::CommandExt;
@@ -150,46 +156,129 @@ pub async fn start_service() -> Result<String, String> {
 
     // Poll and wait for port to start listening (max 15 seconds)
     info!("[Service] Waiting for port {} to start listening...", SERVICE_PORT);
+    let mut started = false;
     for i in 1..=15 {
         std::thread::sleep(std::time::Duration::from_secs(1));
         if let Some(pid) = check_port_listening(SERVICE_PORT) {
             info!("[Service] Successfully started ({}s), PID: {}", i, pid);
-            return Ok(format!("Service started, PID: {}", pid));
+            started = true;
+            break;
         }
         if i % 3 == 0 {
             debug!("[Service] Waiting... ({}s)", i);
         }
     }
 
-    info!("[Service] Wait timeout, port still not listening");
-    Err("Service start timeout (15s), please check openclaw logs".to_string())
+    if !started {
+        info!("[Service] Wait timeout, port still not listening");
+        return Err("Service start timeout (15s), please check openclaw logs".to_string());
+    }
+
+    // Reset stop flag
+    INTENTIONAL_STOP.store(false, Ordering::Relaxed);
+
+    // Spawn supervisor thread
+    thread::spawn(|| {
+        info!("[Service Supervisor] Thread started");
+        loop {
+            thread::sleep(Duration::from_secs(5));
+
+            // If stop was intentional, exit supervisor
+            if INTENTIONAL_STOP.load(Ordering::Relaxed) {
+                info!("[Service Supervisor] Intentional stop detected, exiting thread");
+                break;
+            }
+
+            // Check if service is running
+            if check_port_listening(SERVICE_PORT).is_none() {
+                warn!("[Service Supervisor] Service stopped unexpectedly! Restarting...");
+                
+                // Double check flag just in case
+                if INTENTIONAL_STOP.load(Ordering::Relaxed) { break; }
+
+                if let Err(e) = shell::spawn_openclaw_gateway() {
+                    error!("[Service Supervisor] Failed to restart service: {}", e);
+                } else {
+                    info!("[Service Supervisor] Restart command sent");
+                    // Wait for it to come up so we don't spam restarts
+                    thread::sleep(Duration::from_secs(10));
+                }
+            }
+        }
+    });
+
+    if let Some(pid) = check_port_listening(SERVICE_PORT) {
+        Ok(format!("Service started, PID: {}", pid))
+    } else {
+        Ok("Service started (pid unknown)".to_string())
+    }
 }
 
+/// Stop service
 /// Stop service
 #[command]
 pub async fn stop_service() -> Result<String, String> {
     info!("[Service] Stopping service...");
 
+    // Set flag so supervisor knows this is intentional
+    INTENTIONAL_STOP.store(true, Ordering::Relaxed);
+
+    // 1. Try graceful stop
     let _ = shell::run_openclaw(&["gateway", "stop"]);
-    std::thread::sleep(std::time::Duration::from_millis(500));
+    
+    // Wait a bit
+    for _ in 0..5 {
+        std::thread::sleep(std::time::Duration::from_millis(500));
+        let status = get_service_status().await?;
+        if !status.running {
+            info!("[Service] Successfully stopped (graceful)");
+            return Ok("Service stopped".to_string());
+        }
+    }
+
+    // 2. Try force stop via CLI
+    info!("[Service] Graceful stop failed, trying CLI force stop...");
+    let _ = shell::run_openclaw(&["gateway", "stop", "--force"]);
+    std::thread::sleep(std::time::Duration::from_millis(1000));
 
     let status = get_service_status().await?;
     if !status.running {
-        info!("[Service] Successfully stopped");
+        info!("[Service] Successfully stopped (CLI force)");
         return Ok("Service stopped".to_string());
     }
 
-    // Try force stop
-    let _ = shell::run_openclaw(&["gateway", "stop", "--force"]);
-    std::thread::sleep(std::time::Duration::from_millis(500));
+    // 3. Last resort: Kill process by PID
+    if let Some(pid) = status.pid {
+        info!("[Service] CLI force stop failed, killing PID {}...", pid);
+        
+        #[cfg(windows)]
+        {
+            let mut cmd = Command::new("taskkill");
+            cmd.args(["/F", "/PID", &pid.to_string()]);
+            cmd.creation_flags(CREATE_NO_WINDOW);
+            if let Ok(output) = cmd.output() {
+                if !output.status.success() {
+                     let stderr = String::from_utf8_lossy(&output.stderr);
+                     warn!("[Service] Failed to taskkill PID {}: {}", pid, stderr);
+                }
+            }
+        }
 
-    let status = get_service_status().await?;
-    if status.running {
-        Err(format!("Unable to stop service, PID: {:?}", status.pid))
-    } else {
-        info!("[Service] Successfully stopped");
-        Ok("Service stopped".to_string())
+        #[cfg(unix)]
+        {
+            let _ = Command::new("kill").args(["-9", &pid.to_string()]).output();
+        }
+        
+        std::thread::sleep(std::time::Duration::from_millis(1000));
+        
+        let final_status = get_service_status().await?;
+        if !final_status.running {
+             info!("[Service] Successfully killed process");
+             return Ok("Service stopped (killed)".to_string());
+        }
     }
+
+    Err("Failed to stop service after all attempts".to_string())
 }
 
 /// Restart service
@@ -198,36 +287,21 @@ pub async fn restart_service() -> Result<String, String> {
     info!("[Service] Restarting service...");
 
     // Step 1: Stop the service if it's running
-    let status = get_service_status().await?;
-    if status.running {
-        info!("[Service] Service is running, stopping first...");
-        let _ = shell::run_openclaw(&["gateway", "stop"]);
-        std::thread::sleep(std::time::Duration::from_millis(500));
-
-        // Check if stopped
-        let status = get_service_status().await?;
-        if status.running {
-            info!("[Service] Service still running, trying force stop...");
-            let _ = shell::run_openclaw(&["gateway", "stop", "--force"]);
-            std::thread::sleep(std::time::Duration::from_millis(500));
+    // Step 1: Stop the service if it's running
+    match stop_service().await {
+        Ok(_) => {
+            info!("[Service] Service stopped successfully");
+            // Wait a bit to ensure port is freed
+            std::thread::sleep(std::time::Duration::from_millis(1000));
         }
-
-        // Wait for port to be freed (max 5 seconds)
-        for i in 1..=10 {
-            if check_port_listening(SERVICE_PORT).is_none() {
-                info!("[Service] Port {} freed after {}ms", SERVICE_PORT, i * 500);
-                break;
-            }
-            if i == 10 {
-                return Err(format!(
-                    "Failed to stop service: port {} still in use after 5s",
-                    SERVICE_PORT
-                ));
-            }
-            std::thread::sleep(std::time::Duration::from_millis(500));
+        Err(e) => {
+            info!("[Service] Failed to stop service: {}, trying to continue anyway...", e);
         }
-    } else {
-        info!("[Service] Service was not running");
+    }
+    
+    // Double check port is free
+    if check_port_listening(SERVICE_PORT).is_some() {
+         return Err(format!("Port {} is still in use after stop attempt", SERVICE_PORT));
     }
 
     // Step 2: Start the service

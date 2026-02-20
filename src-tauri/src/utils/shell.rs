@@ -1,4 +1,4 @@
-use std::process::{Command, Output};
+use std::process::{Command, Output, Stdio};
 use std::io;
 use std::collections::HashMap;
 use crate::utils::platform;
@@ -587,6 +587,12 @@ pub fn spawn_openclaw_gateway() -> io::Result<()> {
     cmd.creation_flags(CREATE_NO_WINDOW);
     
     info!("[Shell] Starting gateway process...");
+    
+    // Explicitly set stdio to null to prevent EBADF errors when running in background/supervisor
+    cmd.stdout(Stdio::null());
+    cmd.stderr(Stdio::null());
+    cmd.stdin(Stdio::null());
+
     let child = cmd.spawn();
     
     match child {
