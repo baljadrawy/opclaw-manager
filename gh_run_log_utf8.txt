@@ -1,0 +1,1259 @@
+﻿build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	∩╗┐2026-02-20T03:54:53.6493813Z Current runner version: '2.331.0'
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6519859Z ##[group]Runner Image Provisioner
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6520684Z Hosted Compute Agent
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6521199Z Version: 20260213.493
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6521808Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6522480Z Build Date: 2026-02-13T00:28:41Z
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6523101Z Worker ID: {23fe159e-7f9c-4d40-b7ec-0c8494e16a6a}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6523734Z Azure Region: westus
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6524237Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6526124Z ##[group]Operating System
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6526750Z Microsoft Windows Server 2025
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6527306Z 10.0.26100
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6527748Z Datacenter
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6528237Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6528678Z ##[group]Runner Image
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6529181Z Image: windows-2025
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6529698Z Version: 20260217.31.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6531063Z Included Software: https://github.com/actions/runner-images/blob/win25/20260217.31/images/windows/Windows2025-Readme.md
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6532530Z Image Release: https://github.com/actions/runner-images/releases/tag/win25%2F20260217.31
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6533367Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6534388Z ##[group]GITHUB_TOKEN Permissions
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6536203Z Contents: write
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6536697Z Metadata: read
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6537250Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6539381Z Secret source: Actions
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6540074Z Prepare workflow directory
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6897992Z Prepare all required actions
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:53.6958941Z Getting action download info
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:54.1903272Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:54.3208091Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:54.4855283Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:631a55b12751854ce901bb631d5902ceb48146f7)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:54.8401252Z Download action repository 'swatinem/rust-cache@v2' (SHA:779680da715d629ac1d338a641029a2f4372abb5)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:55.3994960Z Download action repository 'tauri-apps/tauri-action@v0' (SHA:73fb865345c54760d875b94642314f8c0c894afa)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.1981941Z Complete job name: build (windows-latest, x86_64-pc-windows-msvc, Windows)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3305870Z ##[group]Run actions/checkout@v4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3306793Z with:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3307217Z   repository: MrFadiAi/openclaw-manager
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3308031Z   token: ***
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3308364Z   ssh-strict: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3308722Z   ssh-user: git
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3309332Z   persist-credentials: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3309743Z   clean: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3310103Z   sparse-checkout-cone-mode: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3310545Z   fetch-depth: 1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3311141Z   fetch-tags: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3311496Z   show-progress: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3311908Z   lfs: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3312344Z   submodules: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3312696Z   set-safe-directory: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.3313383Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.4992649Z Syncing repository: MrFadiAi/openclaw-manager
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.4994340Z ##[group]Getting Git version info
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.4995401Z Working directory is 'D:\a\openclaw-manager\openclaw-manager'
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.6069015Z [command]"C:\Program Files\Git\bin\git.exe" version
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.9939533Z git version 2.53.0.windows.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:56.9991983Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.0013848Z Temporarily overriding HOME='D:\a\_temp\3d8bf7b2-6d5e-4352-9bef-f75c0869ab74' before making global git config changes
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.0015220Z Adding repository directory to the temporary git global config as a safe directory
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.0025419Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\openclaw-manager\openclaw-manager
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.0570915Z Deleting the contents of 'D:\a\openclaw-manager\openclaw-manager'
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.0577505Z ##[group]Initializing the repository
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.0587263Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\openclaw-manager\openclaw-manager
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.1544434Z Initialized empty Git repository in D:/a/openclaw-manager/openclaw-manager/.git/
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.1591103Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/MrFadiAi/openclaw-manager
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.2151180Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.2152123Z ##[group]Disabling automatic garbage collection
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.2162169Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.2493387Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.2493967Z ##[group]Setting up auth
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.2567465Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:57.2833686Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:58.7162049Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:58.7468858Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:59.2888687Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:59.3213517Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:59.8868271Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:59.9222127Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:59.9222589Z ##[group]Fetching the repository
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:54:59.9237167Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3cfc653a3a3f26b392745031eba8cd764842eeb3:refs/tags/v0.0.13
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.1158730Z From https://github.com/MrFadiAi/openclaw-manager
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.1159580Z  * [new ref]         3cfc653a3a3f26b392745031eba8cd764842eeb3 -> v0.0.13
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.1542500Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.1543104Z ##[group]Determining the checkout info
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.1545795Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.1557079Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.2060141Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.2418857Z ##[group]Checking out the ref
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.2429969Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/tags/v0.0.13
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3320918Z Note: switching to 'refs/tags/v0.0.13'.
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3321374Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3321678Z You are in 'detached HEAD' state. You can look around, make experimental
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3322487Z changes and commit them, and you can discard any commits you make in this
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3323276Z state without impacting any branches by switching back to a branch.
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3323758Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3324041Z If you want to create a new branch to retain commits you create, you may
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3325192Z do so (now or later) by using -c with the switch command. Example:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3325643Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3325806Z   git switch -c <new-branch-name>
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3326067Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3326219Z Or undo this operation with:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3326513Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3326648Z   git switch -
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3326828Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3328475Z Turn off this advice by setting config variable advice.detachedHead to false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3329005Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3329178Z HEAD is now at 3cfc653 chore: release v0.0.13
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3400079Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.3891631Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.4187355Z 3cfc653a3a3f26b392745031eba8cd764842eeb3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.4648110Z ##[group]Run actions/setup-node@v4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.4648414Z with:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.4648582Z   node-version: 22
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.4648759Z   cache: npm
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.4648923Z   always-auth: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.4649104Z   check-latest: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.4649408Z   token: ***
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.4649566Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.7325932Z Found in cache @ C:\hostedtoolcache\windows\node\22.22.0\x64
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:01.7344925Z ##[group]Environment details
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:06.6177160Z node: v22.22.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:06.6177402Z npm: 10.9.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:06.6177592Z yarn: 1.22.22
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:06.6179246Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:06.6973193Z [command]C:\Windows\system32\cmd.exe /D /S /C "C:\hostedtoolcache\windows\node\22.22.0\x64\npm.cmd config get cache"
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.2489554Z C:\npm\cache
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.7492411Z npm cache is not found
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.7975467Z ##[group]Run dtolnay/rust-toolchain@stable
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.7976074Z with:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.7976318Z   targets: x86_64-pc-windows-msvc
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.7976603Z   toolchain: stable
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.7976810Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8199423Z ##[group]Run : parse toolchain version
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8199781Z [36;1m: parse toolchain version[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8200038Z [36;1mif [[ -z $toolchain ]]; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8200535Z [36;1m  # GitHub does not enforce `required: true` inputs itself. https://github.com/actions/runner/issues/1070[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8201083Z [36;1m  echo "'toolchain' is a required input" >&2[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8201373Z [36;1m  exit 1[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8201671Z [36;1melif [[ $toolchain =~ ^stable' '[0-9]+' '(year|month|week|day)s?' 'ago$ ]]; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8202055Z [36;1m  if [[ Windows == macOS ]]; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8202612Z [36;1m    echo "toolchain=1.$((($(date -v-$(sed 's/stable \([0-9]*\) \(.\).*/\1\2/' <<< $toolchain) +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8203106Z [36;1m  else[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8203475Z [36;1m    echo "toolchain=1.$((($(date --date "${toolchain#stable }" +%s)/60/60/24-16569)/7/6))" >> $GITHUB_OUTPUT[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8203898Z [36;1m  fi[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8204149Z [36;1melif [[ $toolchain =~ ^stable' 'minus' '[0-9]+' 'releases?$ ]]; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8204644Z [36;1m  echo "toolchain=1.$((($(date +%s)/60/60/24-16569)/7/6-${toolchain//[^0-9]/}))" >> $GITHUB_OUTPUT[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8205063Z [36;1melif [[ $toolchain =~ ^1\.[0-9]+$ ]]; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8205571Z [36;1m  echo "toolchain=1.$((i=${toolchain#1.}, c=($(date +%s)/60/60/24-16569)/7/6, i+9*i*(10*i<=c)+90*i*(100*i<=c)))" >> $GITHUB_OUTPUT[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8206024Z [36;1melse[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8206233Z [36;1m  echo "toolchain=$toolchain" >> $GITHUB_OUTPUT[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8206490Z [36;1mfi[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8232637Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8233008Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8233167Z   toolchain: stable
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:07.8233343Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0012814Z ##[group]Run : construct rustup command line
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0013127Z [36;1m: construct rustup command line[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0013559Z [36;1mecho "targets=$(for t in ${targets//,/ }; do echo -n ' --target' $t; done)" >> $GITHUB_OUTPUT[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0014171Z [36;1mecho "components=$(for c in ${components//,/ }; do echo -n ' --component' $c; done)" >> $GITHUB_OUTPUT[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0015477Z [36;1mecho "downgrade=" >> $GITHUB_OUTPUT[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0031452Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0031821Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0032411Z   targets: x86_64-pc-windows-msvc
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0032681Z   components: 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0032861Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0833909Z ##[group]Run : set $CARGO_HOME
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0834168Z [36;1m: set $CARGO_HOME[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0834472Z [36;1mecho CARGO_HOME=${CARGO_HOME:-"$USERPROFILE\.cargo"} >> $GITHUB_ENV[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0850507Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.0850880Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1421835Z ##[group]Run : install rustup if needed on windows
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1422191Z [36;1m: install rustup if needed on windows[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1422522Z [36;1mif ! command -v rustup &>/dev/null; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1423365Z [36;1m  curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://win.rustup.rs/x86_64 --output 'D:\a\_temp\rustup-init.exe'[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1424325Z [36;1m  'D:\a\_temp\rustup-init.exe' --default-toolchain none --no-modify-path -y[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1426417Z [36;1m  echo "$CARGO_HOME\bin" >> $GITHUB_PATH[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1426760Z [36;1mfi[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1444015Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1444428Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1444615Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.1444867Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.2186244Z ##[group]Run rustup toolchain install stable --target x86_64-pc-windows-msvc --profile minimal --no-self-update
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.2187091Z [36;1mrustup toolchain install stable --target x86_64-pc-windows-msvc --profile minimal --no-self-update[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.2205112Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.2205545Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.2205723Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.2206037Z   RUSTUP_PERMIT_COPY_RENAME: 1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:08.2206421Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:11.5827345Z info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.0806980Z info: latest update on 2026-02-12, rust version 1.93.1 (01f6ddf75 2026-02-11)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.1259743Z info: component 'rust-std' for target 'x86_64-pc-windows-msvc' is up to date
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.1283476Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.1487244Z   stable-x86_64-pc-windows-msvc unchanged - rustc 1.93.1 (01f6ddf75 2026-02-11)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.1489207Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.1707497Z ##[group]Run rustup default stable
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.1707756Z [36;1mrustup default stable[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.1723595Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.1723970Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.1724164Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.1724403Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.2469008Z info: using existing install for 'stable-x86_64-pc-windows-msvc'
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.2929197Z info: default toolchain set to 'stable-x86_64-pc-windows-msvc'
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.2929828Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3139388Z   stable-x86_64-pc-windows-msvc unchanged - rustc 1.93.1 (01f6ddf75 2026-02-11)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3139789Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3391105Z ##[group]Run : create cachekey
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3391354Z [36;1m: create cachekey[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3391825Z [36;1mDATE=$(rustc +stable --version --verbose | sed -ne 's/^commit-date: \(20[0-9][0-9]\)-\([01][0-9]\)-\([0-3][0-9]\)$/\1\2\3/p')[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3392870Z [36;1mHASH=$(rustc +stable --version --verbose | sed -ne 's/^commit-hash: //p')[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3393354Z [36;1mecho "cachekey=$(echo $DATE$HASH | head -c12)" >> $GITHUB_OUTPUT[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3408811Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3409379Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3409558Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:12.3409794Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.2521006Z ##[group]Run : disable incremental compilation
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.2521340Z [36;1m: disable incremental compilation[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.2521634Z [36;1mif [ -z "${CARGO_INCREMENTAL+set}" ]; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.2521941Z [36;1m  echo CARGO_INCREMENTAL=0 >> $GITHUB_ENV[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.2522193Z [36;1mfi[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.2537610Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.2537980Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.2538147Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.2538390Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3063665Z ##[group]Run : enable colors in Cargo output
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3063997Z [36;1m: enable colors in Cargo output[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3064281Z [36;1mif [ -z "${CARGO_TERM_COLOR+set}" ]; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3064611Z [36;1m  echo CARGO_TERM_COLOR=always >> $GITHUB_ENV[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3064866Z [36;1mfi[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3080322Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3080681Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3081812Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3082130Z   CARGO_INCREMENTAL: 0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3082415Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3655872Z ##[group]Run : enable Cargo sparse registry
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3656177Z [36;1m: enable Cargo sparse registry[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3656507Z [36;1m# implemented in 1.66, stabilized in 1.68, made default in 1.70[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3657139Z [36;1mif [ -z "${CARGO_REGISTRIES_CRATES_IO_PROTOCOL+set}" -o -f "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol ]; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3657792Z [36;1m  if rustc +stable --version --verbose | grep -q '^release: 1\.6[89]\.'; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3658297Z [36;1m    touch "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3659165Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse >> $GITHUB_ENV[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3659651Z [36;1m  elif rustc +stable --version --verbose | grep -q '^release: 1\.6[67]\.'; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3660157Z [36;1m    touch "D:\a\_temp"/.implicit_cargo_registries_crates_io_protocol || true[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3660602Z [36;1m    echo CARGO_REGISTRIES_CRATES_IO_PROTOCOL=git >> $GITHUB_ENV[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3660913Z [36;1m  fi[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3661066Z [36;1mfi[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3676048Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3676407Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3676579Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3676810Z   CARGO_INCREMENTAL: 0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3676995Z   CARGO_TERM_COLOR: always
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.3677183Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5655496Z ##[group]Run : work around spurious network errors in curl 8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5655897Z [36;1m: work around spurious network errors in curl 8.0[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5656415Z [36;1m# https://rust-lang.zulipchat.com/#narrow/stream/246057-t-cargo/topic/timeout.20investigation[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5657013Z [36;1mif rustc +stable --version --verbose | grep -q '^release: 1\.7[01]\.'; then[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5657444Z [36;1m  echo CARGO_HTTP_MULTIPLEXING=false >> $GITHUB_ENV[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5657716Z [36;1mfi[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5673474Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5673838Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5674006Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5674247Z   CARGO_INCREMENTAL: 0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5674434Z   CARGO_TERM_COLOR: always
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.5674618Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.6938688Z ##[group]Run rustc +stable --version --verbose
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.6940183Z [36;1mrustc +stable --version --verbose[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.6970168Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.6970821Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.6971109Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.6971529Z   CARGO_INCREMENTAL: 0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.6971869Z   CARGO_TERM_COLOR: always
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.6972206Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.7904607Z rustc 1.93.1 (01f6ddf75 2026-02-11)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.7905043Z binary: rustc
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.7905692Z commit-hash: 01f6ddf7588f42ae2d7eb0a2f21d44e8e96674cf
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.7906282Z commit-date: 2026-02-11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.7906886Z host: x86_64-pc-windows-msvc
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.7907270Z release: 1.93.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.7907639Z LLVM version: 21.1.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8222445Z ##[group]Run swatinem/rust-cache@v2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8223194Z with:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8223370Z   workspaces: src-tauri
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8223567Z   prefix-key: v0-rust
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8223771Z   add-job-id-key: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8223975Z   add-rust-environment-hash-key: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8224207Z   cache-targets: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8224391Z   cache-all-crates: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8224598Z   cache-workspace-crates: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8224805Z   save-if: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8224975Z   cache-provider: github
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8225167Z   cache-bin: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8225334Z   lookup-only: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8225498Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8225662Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8226155Z   CARGO_INCREMENTAL: 0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8226335Z   CARGO_TERM_COLOR: always
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:13.8226520Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6035854Z ##[group]Cache Configuration
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6036513Z Cache Provider:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6036831Z     github
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6037127Z Workspaces:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6038099Z     D:\a\openclaw-manager\openclaw-manager\src-tauri
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6038669Z Cache Paths:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6039038Z     C:\Users\runneradmin\.cargo\bin
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6039558Z     C:\Users\runneradmin\.cargo\.crates.toml
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6040120Z     C:\Users\runneradmin\.cargo\.crates2.json
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6040666Z     C:\Users\runneradmin\.cargo\registry
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6041168Z     C:\Users\runneradmin\.cargo\git
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6041775Z     D:\a\openclaw-manager\openclaw-manager\src-tauri\target
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6042336Z Restore Key:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6043186Z     v0-rust-build-Windows_NT-x64-1cfb0b4b
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6043633Z Cache Key:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6044061Z     v0-rust-build-Windows_NT-x64-1cfb0b4b-59977900
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6044842Z .. Prefix:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6045283Z   - v0-rust-build-Windows_NT-x64
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6045701Z .. Environment considered:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6046428Z   - Rust Version: 1.93.1 x86_64-pc-windows-msvc (01f6ddf7588f42ae2d7eb0a2f21d44e8e96674cf)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6047161Z   - CARGO_HOME
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6047471Z   - CARGO_INCREMENTAL
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6047810Z   - CARGO_TERM_COLOR
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6048175Z .. Lockfiles considered:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6048752Z   - D:\a\openclaw-manager\openclaw-manager\src-tauri\Cargo.toml
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6049557Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6049742Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:16.6049909Z ... Restoring cache ...
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:17.0239249Z No cache found.
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:17.0539887Z ##[group]Run npm ci
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:17.0540561Z [36;1mnpm ci[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:17.1551846Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:17.1552204Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:17.1552464Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:17.1552871Z   CARGO_INCREMENTAL: 0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:17.1553071Z   CARGO_TERM_COLOR: always
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:17.1553278Z   CACHE_ON_FAILURE: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:17.1553473Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:31.4586222Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:31.4587098Z added 152 packages, and audited 153 packages in 8s
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:31.4587789Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:31.4588558Z 27 packages are looking for funding
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:31.4589038Z   run `npm fund` for details
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:31.4599543Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:31.4600309Z found 0 vulnerabilities
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2387566Z ##[group]Run tauri-apps/tauri-action@v0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2387883Z with:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2388040Z   releaseId: 288560564
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2388244Z   updaterJsonPreferNsis: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2388481Z   args: --target x86_64-pc-windows-msvc
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2388715Z   releaseDraft: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2388896Z   prerelease: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2389070Z   projectPath: .
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2389233Z   includeDebug: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2389410Z   includeRelease: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2389609Z   includeUpdaterJson: true
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2389832Z   updaterJsonKeepUniversal: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2390046Z   isGitea: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2390235Z   uploadPlainBinary: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2390437Z   generateReleaseNotes: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2390627Z env:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2390787Z   CARGO_HOME: C:\Users\runneradmin\.cargo
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2391033Z   CARGO_INCREMENTAL: 0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2391238Z   CARGO_TERM_COLOR: always
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2391414Z   CACHE_ON_FAILURE: false
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2392045Z   GITHUB_TOKEN: ***
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2394466Z   TAURI_SIGNING_PRIVATE_KEY: ***
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2394729Z   TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ***
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.2394963Z ##[endgroup]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.4177891Z running npm [ 'run', 'tauri', 'build', '--', '--target', 'x86_64-pc-windows-msvc' ]
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.7866946Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.7867460Z > openclaw-manager@0.0.13 tauri
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.7867869Z > tauri build --target x86_64-pc-windows-msvc
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:33.7868080Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:35.0230945Z         Info Looking up installed tauri packages to check mismatched versions...
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:35.9650178Z      Running beforeBuildCommand `npm run build`
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:36.2812891Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:36.2813880Z > openclaw-manager@0.0.13 build
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:36.2814656Z > tsc && vite build
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:36.2814864Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:41.8144465Z [36mvite v6.4.1 [32mbuilding for production...[36m[39m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:42.3106400Z transforming...
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:46.3543338Z [32mΓ£ô[39m 1958 modules transformed.
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:46.5949410Z rendering chunks...
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:46.7201172Z computing gzip size...
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:46.7896902Z [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.94 kB[22m[1m[22m[2m Γöé gzip:   0.48 kB[22m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:46.7938776Z [2mdist/[22m[35massets/index-DHHaqR6J.css  [39m[1m[2m 38.07 kB[22m[1m[22m[2m Γöé gzip:   7.32 kB[22m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:46.7960073Z [2mdist/[22m[36massets/index-CqlPSvcQ.js   [39m[1m[2m  0.18 kB[22m[1m[22m[2m Γöé gzip:   0.15 kB[22m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:46.7961523Z [2mdist/[22m[36massets/index-CCJqbw3f.js   [39m[1m[2m  1.04 kB[22m[1m[22m[2m Γöé gzip:   0.49 kB[22m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:46.7962984Z [2mdist/[22m[36massets/index-DWNGnkvf.js   [39m[1m[2m462.77 kB[22m[1m[22m[2m Γöé gzip: 128.59 kB[22m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:46.7964268Z [32mΓ£ô built in 4.92s[39m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:49.6918628Z [1m[92m    Updating[0m crates.io index
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.2861665Z [1m[92m     Locking[0m 582 packages to latest compatible versions
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.2983513Z [1m[92m      Adding[0m dirs v5.0.1 [1m[93m(available: v6.0.0)[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.3011891Z [1m[92m      Adding[0m generic-array v0.14.7 [1m[93m(available: v0.14.9)[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.3598831Z [1m[92m      Adding[0m thiserror v1.0.69 [1m[93m(available: v2.0.18)[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.3640327Z [1m[92m      Adding[0m toml v0.8.2 [1m[93m(available: v0.8.23)[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.3643931Z [1m[92m      Adding[0m toml_datetime v0.6.3 [1m[93m(available: v0.6.11)[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.3655444Z [1m[92m      Adding[0m toml_edit v0.20.2 [1m[93m(available: v0.20.7)[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.4246769Z [1m[92m Downloading[0m crates ...
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.5994233Z [1m[92m  Downloaded[0m percent-encoding v2.3.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.6752302Z [1m[92m  Downloaded[0m schemars v1.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.8971327Z [1m[92m  Downloaded[0m sha2 v0.10.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.9483819Z [1m[92m  Downloaded[0m string_cache_codegen v0.5.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.9663661Z [1m[92m  Downloaded[0m servo_arc v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:52.9788531Z [1m[92m  Downloaded[0m simd-adler32 v0.3.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.0115888Z [1m[92m  Downloaded[0m windows-link v0.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.0362916Z [1m[92m  Downloaded[0m windows-targets v0.53.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.0492189Z [1m[92m  Downloaded[0m windows-link v0.1.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.0616960Z [1m[92m  Downloaded[0m zmij v1.0.21
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.0845895Z [1m[92m  Downloaded[0m writeable v0.6.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.1069143Z [1m[92m  Downloaded[0m zerofrom-derive v0.1.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.1174364Z [1m[92m  Downloaded[0m zerovec v0.11.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.1777393Z [1m[92m  Downloaded[0m zerotrie v0.2.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.2182882Z [1m[92m  Downloaded[0m untrusted v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.2427291Z [1m[92m  Downloaded[0m zerovec-derive v0.11.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.2583811Z [1m[92m  Downloaded[0m zerofrom v0.1.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.2746444Z [1m[92m  Downloaded[0m zip v4.6.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.3139854Z [1m[92m  Downloaded[0m urlpattern v0.3.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.3336111Z [1m[92m  Downloaded[0m typenum v1.19.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.3618319Z [1m[92m  Downloaded[0m thiserror-impl v1.0.69
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.3840930Z [1m[92m  Downloaded[0m windows-threading v0.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.3978442Z [1m[92m  Downloaded[0m winnow v0.7.14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.5053225Z [1m[92m  Downloaded[0m windows-implement v0.60.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.5634992Z [1m[92m  Downloaded[0m webview2-com v0.38.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.7907069Z [1m[92m  Downloaded[0m wry v0.54.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.8710980Z [1m[92m  Downloaded[0m tower-service v0.3.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.8836906Z [1m[92m  Downloaded[0m windows_x86_64_msvc v0.53.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.9183156Z [1m[92m  Downloaded[0m uuid v1.21.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:53.9577901Z [1m[92m  Downloaded[0m yoke v0.8.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:54.0009921Z [1m[92m  Downloaded[0m tracing-core v0.1.36
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:54.0643698Z [1m[92m  Downloaded[0m unic-ucd-ident v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:54.1703304Z [1m[92m  Downloaded[0m tracing-attributes v0.1.31
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:54.2802615Z [1m[92m  Downloaded[0m tauri v2.10.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:55.6009694Z [1m[92m  Downloaded[0m zerocopy v0.8.39
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:56.4584308Z [1m[92m  Downloaded[0m winreg v0.55.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:56.5032744Z [1m[92m  Downloaded[0m url v2.5.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:56.5316549Z [1m[92m  Downloaded[0m tower-http v0.6.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:56.7091686Z [1m[92m  Downloaded[0m windows_x86_64_msvc v0.48.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:56.7346604Z [1m[92m  Downloaded[0m tower v0.5.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:56.8486783Z [1m[92m  Downloaded[0m time v0.3.47
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:56.9895839Z [1m[92m  Downloaded[0m tauri-utils v2.8.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:57.0248941Z [1m[92m  Downloaded[0m tauri-runtime-wry v2.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:57.0458328Z [1m[92m  Downloaded[0m tokio v1.49.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.2376342Z [1m[92m  Downloaded[0m walkdir v2.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.2534550Z [1m[92m  Downloaded[0m vswhom-sys v0.1.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.2697811Z [1m[92m  Downloaded[0m unicode-segmentation v1.12.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.2881369Z [1m[92m  Downloaded[0m tracing v0.1.44
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.3802068Z [1m[92m  Downloaded[0m tauri-plugin-shell v2.3.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.4258880Z [1m[92m  Downloaded[0m tauri-plugin-process v2.3.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.4465597Z [1m[92m  Downloaded[0m windows-targets v0.52.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.4545431Z [1m[92m  Downloaded[0m windows-targets v0.48.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.4659018Z [1m[92m  Downloaded[0m windows-interface v0.59.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.4754027Z [1m[92m  Downloaded[0m windows-future v0.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.4900928Z [1m[92m  Downloaded[0m tower-layer v0.3.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.4998447Z [1m[92m  Downloaded[0m toml_parser v1.0.9+spec-1.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.5241191Z [1m[92m  Downloaded[0m thiserror-impl v2.0.18
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.5432281Z [1m[92m  Downloaded[0m thiserror v1.0.69
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.6183844Z [1m[92m  Downloaded[0m tempfile v3.25.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.6416615Z [1m[92m  Downloaded[0m tauri-plugin-notification v2.3.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.6969891Z [1m[92m  Downloaded[0m tauri-plugin-fs v2.4.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.7646643Z [1m[92m  Downloaded[0m zeroize v1.8.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.7777484Z [1m[92m  Downloaded[0m yoke-derive v0.8.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.7887635Z [1m[92m  Downloaded[0m windows-version v0.1.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.7989631Z [1m[92m  Downloaded[0m windows-strings v0.4.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.8152743Z [1m[92m  Downloaded[0m windows_x86_64_msvc v0.52.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.8349807Z [1m[92m  Downloaded[0m windows-result v0.3.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.8489127Z [1m[92m  Downloaded[0m windows-numerics v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.8612122Z [1m[92m  Downloaded[0m windows-collections v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.8710286Z [1m[92m  Downloaded[0m webview2-com-macros v0.8.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.8792721Z [1m[92m  Downloaded[0m want v0.3.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.8891609Z [1m[92m  Downloaded[0m vswhom v0.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.8988545Z [1m[92m  Downloaded[0m version_check v0.9.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.9093835Z [1m[92m  Downloaded[0m utf8parse v0.2.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.9211118Z [1m[92m  Downloaded[0m utf8_iter v1.0.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.9301951Z [1m[92m  Downloaded[0m utf-8 v0.7.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.9401930Z [1m[92m  Downloaded[0m unicode-ident v1.0.24
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.9627549Z [1m[92m  Downloaded[0m unic-ucd-version v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.9732086Z [1m[92m  Downloaded[0m unic-char-range v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:58.9921022Z [1m[92m  Downloaded[0m unic-char-property v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.0057853Z [1m[92m  Downloaded[0m typeid v1.0.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.0183775Z [1m[92m  Downloaded[0m try-lock v0.2.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.0281657Z [1m[92m  Downloaded[0m tray-icon v0.21.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.0465415Z [1m[92m  Downloaded[0m toml v0.9.12+spec-1.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.0816252Z [1m[92m  Downloaded[0m tokio-macros v2.6.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.0908777Z [1m[92m  Downloaded[0m tinystr v0.8.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.1079496Z [1m[92m  Downloaded[0m time-core v0.1.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.1176074Z [1m[92m  Downloaded[0m tendril v0.4.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.1331891Z [1m[92m  Downloaded[0m tao v0.34.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.2195868Z [1m[92m  Downloaded[0m syn v2.0.117
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.7720870Z [1m[92m  Downloaded[0m syn v1.0.109
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.8438832Z [1m[92m  Downloaded[0m window-vibrancy v0.6.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.8764630Z [1m[92m  Downloaded[0m winapi-util v0.1.11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.8896425Z [1m[92m  Downloaded[0m unic-common v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.8967264Z [1m[92m  Downloaded[0m toml_datetime v0.7.5+spec-1.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.9062954Z [1m[92m  Downloaded[0m tokio-rustls v0.26.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.9216903Z [1m[92m  Downloaded[0m thiserror v2.0.18
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:55:59.9946059Z [1m[92m  Downloaded[0m tauri-winres v0.3.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:00.0093807Z [1m[92m  Downloaded[0m tauri-runtime v2.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:00.0230642Z [1m[92m  Downloaded[0m tauri-plugin-dialog v2.6.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:00.0659724Z [1m[92m  Downloaded[0m tauri-plugin v2.5.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:00.0750033Z [1m[92m  Downloaded[0m tauri-macros v2.5.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:00.0868980Z [1m[92m  Downloaded[0m sync_wrapper v1.0.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:00.0942094Z [1m[92m  Downloaded[0m string_cache v0.8.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:00.1115715Z [1m[92m  Downloaded[0m regex-automata v0.4.14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:00.2015733Z [1m[92m  Downloaded[0m libc v0.2.182
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:00.4722280Z [1m[92m  Downloaded[0m jiff v0.2.20
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:00.5809989Z [1m[92m  Downloaded[0m windows-sys v0.59.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.3110680Z [1m[92m  Downloaded[0m unsafe-libyaml v0.2.11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.3384086Z [1m[92m  Downloaded[0m toml_writer v1.0.6+spec-1.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.3484721Z [1m[92m  Downloaded[0m tokio-util v0.7.18
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.4169541Z [1m[92m  Downloaded[0m tauri-build v2.5.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.4322196Z [1m[92m  Downloaded[0m synstructure v0.13.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.4405425Z [1m[92m  Downloaded[0m strsim v0.11.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.4522113Z [1m[92m  Downloaded[0m stable_deref_trait v1.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.4628379Z [1m[92m  Downloaded[0m smallvec v1.15.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.4802658Z [1m[92m  Downloaded[0m siphasher v1.0.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.4915815Z [1m[92m  Downloaded[0m shared_child v1.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.5044800Z [1m[92m  Downloaded[0m serde v1.0.228
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.5291330Z [1m[92m  Downloaded[0m rustls v0.23.36
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.6199077Z [1m[92m  Downloaded[0m encoding_rs v0.8.35
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.6994474Z [1m[92m  Downloaded[0m windows-core v0.61.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.7259441Z [1m[92m  Downloaded[0m time-macros v0.2.27
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.7454952Z [1m[92m  Downloaded[0m tauri-winrt-notification v0.7.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.7762886Z [1m[92m  Downloaded[0m tauri-plugin-updater v2.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.8021998Z [1m[92m  Downloaded[0m tauri-codegen v2.5.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.8137062Z [1m[92m  Downloaded[0m subtle v2.6.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.8239304Z [1m[92m  Downloaded[0m softbuffer v0.4.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.8510097Z [1m[92m  Downloaded[0m socket2 v0.6.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.8620583Z [1m[92m  Downloaded[0m slab v0.4.12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.8743315Z [1m[92m  Downloaded[0m siphasher v0.3.11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.8866589Z [1m[92m  Downloaded[0m shlex v1.3.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:01.8970091Z [1m[92m  Downloaded[0m serde_with v3.16.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:02.1011547Z [1m[92m  Downloaded[0m serde_json v1.0.149
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:02.5165027Z [1m[92m  Downloaded[0m png v0.17.16
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:02.5484030Z [1m[92m  Downloaded[0m indexmap v2.13.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:02.5825473Z [1m[92m  Downloaded[0m idna v1.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:02.6007741Z [1m[92m  Downloaded[0m icu_properties_data v2.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:02.6981892Z [1m[92m  Downloaded[0m html5ever v0.29.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:02.7304014Z [1m[92m  Downloaded[0m hashbrown v0.16.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:02.7629847Z [1m[92m  Downloaded[0m brotli v8.0.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:02.8278977Z [1m[92m  Downloaded[0m serde_yaml v0.9.34+deprecated
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:02.8579600Z [1m[92m  Downloaded[0m windows-sys v0.60.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:03.2035382Z [1m[92m  Downloaded[0m serde_repr v0.1.20
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:03.2227787Z [1m[92m  Downloaded[0m serde_derive_internals v0.29.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:03.2350194Z [1m[92m  Downloaded[0m semver v1.0.27
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:03.2580727Z [1m[92m  Downloaded[0m ryu v1.0.23
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:03.9656608Z [1m[92m  Downloaded[0m rustls-platform-verifier v0.6.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:03.9996089Z [1m[92m  Downloaded[0m reqwest v0.13.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.0359191Z [1m[92m  Downloaded[0m regex-syntax v0.8.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.0740534Z [1m[92m  Downloaded[0m rand v0.9.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.1062025Z [1m[92m  Downloaded[0m rand v0.8.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.1333447Z [1m[92m  Downloaded[0m rand v0.7.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.1703601Z [1m[92m  Downloaded[0m quick-xml v0.37.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.2061861Z [1m[92m  Downloaded[0m windows-sys v0.61.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.4940074Z [1m[92m  Downloaded[0m proc-macro2 v1.0.106
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.5203609Z [1m[92m  Downloaded[0m num-traits v0.2.19
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.5453245Z [1m[92m  Downloaded[0m notify-rust v4.12.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.5674589Z [1m[92m  Downloaded[0m mio v1.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.6134244Z [1m[92m  Downloaded[0m log v0.4.29
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.6299621Z [1m[92m  Downloaded[0m keyboard-types v0.7.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.6434105Z [1m[92m  Downloaded[0m icu_collections v2.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:04.7008001Z [1m[92m  Downloaded[0m windows-sys v0.48.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.3860313Z [1m[92m  Downloaded[0m hashbrown v0.12.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.4106110Z [1m[92m  Downloaded[0m futures-util v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.5373701Z [1m[92m  Downloaded[0m futures-io v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.5445165Z [1m[92m  Downloaded[0m fnv v1.0.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.5524111Z [1m[92m  Downloaded[0m flate2 v1.1.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.5949058Z [1m[92m  Downloaded[0m find-msvc-tools v0.1.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.6084402Z [1m[92m  Downloaded[0m fdeflate v0.3.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.6249123Z [1m[92m  Downloaded[0m digest v0.10.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.6412066Z [1m[92m  Downloaded[0m derive_more v0.99.20
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.6937296Z [1m[92m  Downloaded[0m darling_core v0.21.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.7437272Z [1m[92m  Downloaded[0m ctor v0.2.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.7517435Z [1m[92m  Downloaded[0m crossbeam-utils v0.8.21
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.7776084Z [1m[92m  Downloaded[0m camino v1.2.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.7932336Z [1m[92m  Downloaded[0m brotli-decompressor v5.0.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.8270232Z [1m[92m  Downloaded[0m block-buffer v0.10.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.8358494Z [1m[92m  Downloaded[0m bitflags v2.11.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.8756955Z [1m[92m  Downloaded[0m base64 v0.22.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.9035506Z [1m[92m  Downloaded[0m anyhow v1.0.102
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.9383914Z [1m[92m  Downloaded[0m serde_spanned v1.0.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.9468850Z [1m[92m  Downloaded[0m serde_core v1.0.228
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.9753091Z [1m[92m  Downloaded[0m serde-untagged v0.1.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.9850416Z [1m[92m  Downloaded[0m scopeguard v1.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:05.9948815Z [1m[92m  Downloaded[0m schemars_derive v0.8.22
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.0138689Z [1m[92m  Downloaded[0m schemars v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.6538540Z [1m[92m  Downloaded[0m schemars v0.8.22
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.7934348Z [1m[92m  Downloaded[0m rustls-pki-types v1.14.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.8173660Z [1m[92m  Downloaded[0m rfd v0.16.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.8644354Z [1m[92m  Downloaded[0m raw-window-handle v0.6.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.8807290Z [1m[92m  Downloaded[0m rand_core v0.6.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.8911206Z [1m[92m  Downloaded[0m rand_core v0.5.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.9019034Z [1m[92m  Downloaded[0m rand_chacha v0.3.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.9105395Z [1m[92m  Downloaded[0m quote v1.0.44
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.9344522Z [1m[92m  Downloaded[0m precomputed-hash v0.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.9425733Z [1m[92m  Downloaded[0m ppv-lite86 v0.2.21
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.9523838Z [1m[92m  Downloaded[0m potential_utf v0.1.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:06.9606563Z [1m[92m  Downloaded[0m pin-project-lite v0.2.16
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.0225742Z [1m[92m  Downloaded[0m phf_macros v0.11.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.0313712Z [1m[92m  Downloaded[0m phf_generator v0.11.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.0417145Z [1m[92m  Downloaded[0m phf v0.8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.0480102Z [1m[92m  Downloaded[0m parking_lot v0.12.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.0679779Z [1m[92m  Downloaded[0m parking v2.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.0772072Z [1m[92m  Downloaded[0m open v5.3.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.0897542Z [1m[92m  Downloaded[0m once_cell_polyfill v1.70.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.0981273Z [1m[92m  Downloaded[0m once_cell v1.21.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.1244102Z [1m[92m  Downloaded[0m nodrop v0.1.14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.1316666Z [1m[92m  Downloaded[0m miniz_oxide v0.8.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.1542568Z [1m[92m  Downloaded[0m minisign-verify v0.2.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.1710483Z [1m[92m  Downloaded[0m match_token v0.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.1768094Z [1m[92m  Downloaded[0m markup5ever v0.14.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.1888207Z [1m[92m  Downloaded[0m lock_api v0.4.14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.1975386Z [1m[92m  Downloaded[0m jsonptr v0.6.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.2209566Z [1m[92m  Downloaded[0m itoa v1.0.17
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.2320568Z [1m[92m  Downloaded[0m ipnet v2.11.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.2454139Z [1m[92m  Downloaded[0m idna_adapter v1.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.2546295Z [1m[92m  Downloaded[0m icu_locale_core v2.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.3272521Z [1m[92m  Downloaded[0m ico v0.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.3529664Z [1m[92m  Downloaded[0m hyper-rustls v0.27.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.3738621Z [1m[92m  Downloaded[0m httparse v1.10.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.3914421Z [1m[92m  Downloaded[0m http-body-util v0.1.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.4178864Z [1m[92m  Downloaded[0m http v1.4.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.4472202Z [1m[92m  Downloaded[0m getrandom v0.4.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.4807718Z [1m[92m  Downloaded[0m getrandom v0.2.17
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.5062507Z [1m[92m  Downloaded[0m getrandom v0.1.16
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.9858375Z [1m[92m  Downloaded[0m futures-task v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:07.9989263Z [1m[92m  Downloaded[0m futures-sink v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.0060920Z [1m[92m  Downloaded[0m futures-macro v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.0150684Z [1m[92m  Downloaded[0m futures-core v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.0257208Z [1m[92m  Downloaded[0m futf v0.1.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.0342723Z [1m[92m  Downloaded[0m fastrand v2.3.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.0445962Z [1m[92m  Downloaded[0m equivalent v1.0.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.0565942Z [1m[92m  Downloaded[0m env_logger v0.11.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.0735029Z [1m[92m  Downloaded[0m env_filter v1.0.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.0853102Z [1m[92m  Downloaded[0m embed-resource v3.0.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.1025412Z [1m[92m  Downloaded[0m dyn-clone v1.0.20
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.1166733Z [1m[92m  Downloaded[0m dunce v1.0.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.1250220Z [1m[92m  Downloaded[0m displaydoc v0.2.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.1539787Z [1m[92m  Downloaded[0m dirs-sys v0.4.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.1637435Z [1m[92m  Downloaded[0m dirs v6.0.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.1745293Z [1m[92m  Downloaded[0m deranged v0.5.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.1834135Z [1m[92m  Downloaded[0m darling v0.21.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.2400055Z [1m[92m  Downloaded[0m chrono v0.4.43
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.2830276Z [1m[92m  Downloaded[0m atomic-waker v1.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.2926545Z [1m[92m  Downloaded[0m anstyle-wincon v3.0.11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.3031645Z [1m[92m  Downloaded[0m aho-corasick v1.1.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.3409567Z [1m[92m  Downloaded[0m serialize-to-javascript-impl v0.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.3470715Z [1m[92m  Downloaded[0m serialize-to-javascript v0.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.3559458Z [1m[92m  Downloaded[0m same-file v1.0.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.3700628Z [1m[92m  Downloaded[0m rustc_version v0.4.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.3830202Z [1m[92m  Downloaded[0m ref-cast-impl v1.0.25
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.3967754Z [1m[92m  Downloaded[0m ref-cast v1.0.25
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.4253655Z [1m[92m  Downloaded[0m rand_pcg v0.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.4359370Z [1m[92m  Downloaded[0m rand_chacha v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.4455698Z [1m[92m  Downloaded[0m rand_chacha v0.2.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.4541564Z [1m[92m  Downloaded[0m proc-macro-hack v0.5.20+deprecated
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.4729727Z [1m[92m  Downloaded[0m pin-utils v0.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.4831618Z [1m[92m  Downloaded[0m phf_shared v0.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.4886301Z [1m[92m  Downloaded[0m phf_shared v0.8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.4938153Z [1m[92m  Downloaded[0m phf_macros v0.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.4992980Z [1m[92m  Downloaded[0m phf_generator v0.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.5070345Z [1m[92m  Downloaded[0m phf_generator v0.8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.5146970Z [1m[92m  Downloaded[0m phf_codegen v0.11.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.5260248Z [1m[92m  Downloaded[0m phf_codegen v0.8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.5312972Z [1m[92m  Downloaded[0m phf v0.11.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.5430379Z [1m[92m  Downloaded[0m phf v0.10.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.5522363Z [1m[92m  Downloaded[0m parking_lot_core v0.9.12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.5721284Z [1m[92m  Downloaded[0m os_pipe v1.2.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.5847227Z [1m[92m  Downloaded[0m num-conv v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.5923435Z [1m[92m  Downloaded[0m new_debug_unreachable v1.0.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.6019628Z [1m[92m  Downloaded[0m mime v0.3.17
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.6123751Z [1m[92m  Downloaded[0m matches v0.1.10
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.6197123Z [1m[92m  Downloaded[0m mac v0.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.6300995Z [1m[92m  Downloaded[0m is_terminal_polyfill v1.70.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.6376929Z [1m[92m  Downloaded[0m iri-string v0.7.10
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.7065003Z [1m[92m  Downloaded[0m infer v0.19.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.7258267Z [1m[92m  Downloaded[0m indexmap v1.9.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.7949473Z [1m[92m  Downloaded[0m icu_normalizer v2.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:08.8255410Z [1m[92m  Downloaded[0m hyper v1.8.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.1691871Z [1m[92m  Downloaded[0m http-body v1.0.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.1805306Z [1m[92m  Downloaded[0m generic-array v0.14.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.1929731Z [1m[92m  Downloaded[0m futures-lite v2.6.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.2081098Z [1m[92m  Downloaded[0m futures-channel v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.2238024Z [1m[92m  Downloaded[0m erased-serde v0.4.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.2440036Z [1m[92m  Downloaded[0m dtoa-short v0.3.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.2528475Z [1m[92m  Downloaded[0m cssparser-macros v0.6.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.2584305Z [1m[92m  Downloaded[0m crypto-common v0.1.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.2660745Z [1m[92m  Downloaded[0m crossbeam-channel v0.5.15
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.2975403Z [1m[92m  Downloaded[0m crc32fast v1.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.3111354Z [1m[92m  Downloaded[0m convert_case v0.4.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.3204023Z [1m[92m  Downloaded[0m colorchoice v1.0.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.3280706Z [1m[92m  Downloaded[0m cc v1.2.56
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.3522236Z [1m[92m  Downloaded[0m cargo_toml v0.22.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.3641874Z [1m[92m  Downloaded[0m cargo_metadata v0.19.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.3793831Z [1m[92m  Downloaded[0m bytes v1.11.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.4153197Z [1m[92m  Downloaded[0m byteorder v1.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.4268134Z [1m[92m  Downloaded[0m bitflags v1.3.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.4578902Z [1m[92m  Downloaded[0m autocfg v1.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.4761478Z [1m[92m  Downloaded[0m anstyle-parse v0.2.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.4881887Z [1m[92m  Downloaded[0m anstyle v1.0.13
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.5016510Z [1m[92m  Downloaded[0m alloc-stdlib v0.2.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.5129026Z [1m[92m  Downloaded[0m alloc-no-stdlib v2.0.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.5284959Z [1m[92m  Downloaded[0m serde_with_macros v3.16.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.5427699Z [1m[92m  Downloaded[0m serde_derive v1.0.228
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.5730776Z [1m[92m  Downloaded[0m selectors v0.24.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.5845102Z [1m[92m  Downloaded[0m ring v0.17.14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.8816258Z [1m[92m  Downloaded[0m regex v1.12.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.9244815Z [1m[92m  Downloaded[0m muda v0.17.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:09.9654857Z [1m[92m  Downloaded[0m memchr v2.8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.0083890Z [1m[92m  Downloaded[0m litemap v0.8.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.0288421Z [1m[92m  Downloaded[0m lazy_static v1.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.0450844Z [1m[92m  Downloaded[0m json-patch v3.0.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.0667048Z [1m[92m  Downloaded[0m ident_case v1.0.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.0740914Z [1m[92m  Downloaded[0m icu_provider v2.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.0934639Z [1m[92m  Downloaded[0m icu_properties v2.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.1086277Z [1m[92m  Downloaded[0m icu_normalizer_data v2.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.1229523Z [1m[92m  Downloaded[0m hex v0.4.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.1360771Z [1m[92m  Downloaded[0m glob v0.3.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.1505922Z [1m[92m  Downloaded[0m fxhash v0.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.1567985Z [1m[92m  Downloaded[0m dpi v0.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.1655987Z [1m[92m  Downloaded[0m dirs-sys v0.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.1748657Z [1m[92m  Downloaded[0m dirs v5.0.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.1849819Z [1m[92m  Downloaded[0m cssparser v0.29.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.2043768Z [1m[92m  Downloaded[0m cfb v0.7.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.6950537Z [1m[92m  Downloaded[0m anstream v0.6.21
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.7112177Z [1m[92m  Downloaded[0m adler2 v2.0.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.7223983Z [1m[92m  Downloaded[0m rustls-webpki v0.103.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.7441368Z [1m[92m  Downloaded[0m rand_core v0.9.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.7546525Z [1m[92m  Downloaded[0m powerfmt v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.7676336Z [1m[92m  Downloaded[0m phf_shared v0.11.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.7747962Z [1m[92m  Downloaded[0m option-ext v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.7818490Z [1m[92m  Downloaded[0m kuchikiki v0.8.8-speedreader
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:10.8027695Z [1m[92m  Downloaded[0m hyper-util v0.1.20
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.1673557Z [1m[92m  Downloaded[0m heck v0.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.1796958Z [1m[92m  Downloaded[0m getrandom v0.3.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.2093420Z [1m[92m  Downloaded[0m form_urlencoded v1.2.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.2170816Z [1m[92m  Downloaded[0m dtoa v1.0.11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.2290769Z [1m[92m  Downloaded[0m darling_macro v0.21.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.2382859Z [1m[92m  Downloaded[0m cpufeatures v0.2.17
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.2496722Z [1m[92m  Downloaded[0m cookie v0.18.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.2688028Z [1m[92m  Downloaded[0m cfg-if v1.0.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.2797254Z [1m[92m  Downloaded[0m cargo-platform v0.1.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.2896822Z [1m[92m  Downloaded[0m anstyle-query v1.1.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.2992612Z [1m[92m  Downloaded[0m webview2-com-sys v0.38.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:11.4203030Z [1m[92m  Downloaded[0m windows v0.61.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:14.0837402Z [1m[92m   Compiling[0m proc-macro2 v1.0.106
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:14.0839086Z [1m[92m   Compiling[0m unicode-ident v1.0.24
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:14.0841953Z [1m[92m   Compiling[0m quote v1.0.44
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:14.0842509Z [1m[92m   Compiling[0m cfg-if v1.0.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:19.1157158Z [1m[92m   Compiling[0m zerocopy v0.8.39
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:21.8656120Z [1m[92m   Compiling[0m serde_core v1.0.228
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:24.1700706Z [1m[92m   Compiling[0m getrandom v0.2.17
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:25.3288444Z [1m[92m   Compiling[0m rand_core v0.6.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:25.7853333Z [1m[92m   Compiling[0m parking_lot_core v0.9.12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:26.0291234Z [1m[92m   Compiling[0m icu_normalizer_data v2.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:26.2723687Z [1m[92m   Compiling[0m icu_properties_data v2.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:26.5134599Z [1m[92m   Compiling[0m stable_deref_trait v1.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:26.6025614Z [1m[92m   Compiling[0m zmij v1.0.21
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:27.2748229Z [1m[92m   Compiling[0m syn v2.0.117
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:27.4375832Z [1m[92m   Compiling[0m thiserror v2.0.18
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:27.8499683Z [1m[92m   Compiling[0m siphasher v1.0.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:28.0776522Z [1m[92m   Compiling[0m phf_shared v0.11.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:28.2942568Z [1m[92m   Compiling[0m windows-link v0.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:28.3941196Z [1m[92m   Compiling[0m serde v1.0.228
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:28.7943054Z [1m[92m   Compiling[0m smallvec v1.15.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:29.0547838Z [1m[92m   Compiling[0m siphasher v0.3.11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:29.3446195Z [1m[92m   Compiling[0m getrandom v0.1.16
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:29.6395123Z [1m[92m   Compiling[0m fnv v1.0.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:29.7189588Z [1m[92m   Compiling[0m typeid v1.0.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:30.1656432Z [1m[92m   Compiling[0m rand_core v0.5.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:30.4068936Z [1m[92m   Compiling[0m ppv-lite86 v0.2.21
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:30.6919878Z [1m[92m   Compiling[0m syn v1.0.109
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:31.0424084Z [1m[92m   Compiling[0m erased-serde v0.4.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:31.1053289Z [1m[92m   Compiling[0m rand_chacha v0.3.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:31.3427246Z [1m[92m   Compiling[0m litemap v0.8.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:31.5740458Z [1m[92m   Compiling[0m rand v0.8.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:31.8861678Z [1m[92m   Compiling[0m thiserror v1.0.69
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:32.2398392Z [1m[92m   Compiling[0m ident_case v1.0.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:32.3420866Z [1m[92m   Compiling[0m synstructure v0.13.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:32.6303815Z [1m[92m   Compiling[0m phf_generator v0.11.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:32.8711709Z [1m[92m   Compiling[0m strsim v0.11.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:33.1016676Z [1m[92m   Compiling[0m itoa v1.0.17
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:33.2604743Z [1m[92m   Compiling[0m getrandom v0.4.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:33.3203968Z [1m[92m   Compiling[0m writeable v0.6.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:33.3238863Z [1m[92m   Compiling[0m memchr v2.8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:33.5380803Z [1m[92m   Compiling[0m darling_core v0.21.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:33.6212027Z [1m[92m   Compiling[0m autocfg v1.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:34.3425959Z [1m[92m   Compiling[0m rand_chacha v0.2.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:34.9744642Z [1m[92m   Compiling[0m rand_pcg v0.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:35.0972827Z [1m[92m   Compiling[0m phf_shared v0.8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:35.3286613Z [1m[92m   Compiling[0m find-msvc-tools v0.1.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:35.7945950Z [1m[92m   Compiling[0m zerofrom-derive v0.1.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:36.6614963Z [1m[92m   Compiling[0m yoke-derive v0.8.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:38.0690188Z [1m[92m   Compiling[0m serde_derive v1.0.228
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:38.3302324Z [1m[92m   Compiling[0m zerovec-derive v0.11.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:38.3398505Z [1m[92m   Compiling[0m displaydoc v0.2.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:39.3417012Z [1m[92m   Compiling[0m zerofrom v0.1.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:39.4832224Z [1m[92m   Compiling[0m thiserror-impl v2.0.18
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:40.0697358Z [1m[92m   Compiling[0m yoke v0.8.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:40.3159160Z [1m[92m   Compiling[0m zerovec v0.11.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:41.1447346Z [1m[92m   Compiling[0m tinystr v0.8.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:41.3827505Z [1m[92m   Compiling[0m icu_locale_core v2.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:41.6326457Z [1m[92m   Compiling[0m potential_utf v0.1.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:41.7999213Z [1m[92m   Compiling[0m zerotrie v0.2.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:42.2138774Z [1m[92m   Compiling[0m phf_macros v0.11.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:42.5844062Z [1m[92m   Compiling[0m icu_provider v2.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:42.9783239Z [1m[92m   Compiling[0m icu_collections v2.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:42.9880049Z [1m[92m   Compiling[0m darling_macro v0.21.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:43.1830732Z [1m[92m   Compiling[0m thiserror-impl v1.0.69
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:43.5067189Z [1m[92m   Compiling[0m shlex v1.3.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:43.7399648Z [1m[92m   Compiling[0m proc-macro-hack v0.5.20+deprecated
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:43.7523050Z [1m[92m   Compiling[0m anyhow v1.0.102
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:44.0988932Z [1m[92m   Compiling[0m cc v1.2.56
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:44.1268981Z [1m[92m   Compiling[0m darling v0.21.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:44.2786425Z [1m[92m   Compiling[0m rand v0.7.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:44.4327908Z [1m[92m   Compiling[0m phf_shared v0.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:44.7921297Z [1m[92m   Compiling[0m scopeguard v1.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:44.8782822Z [1m[92m   Compiling[0m byteorder v1.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:45.1611608Z [1m[92m   Compiling[0m serde_json v1.0.149
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:45.1850799Z [1m[92m   Compiling[0m new_debug_unreachable v1.0.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:45.2415134Z [1m[92m   Compiling[0m lock_api v0.4.14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:45.3991204Z [1m[92m   Compiling[0m phf_generator v0.8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:45.5460581Z [1m[92m   Compiling[0m phf_generator v0.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:45.6547730Z [1m[92m   Compiling[0m icu_properties v2.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:45.8794164Z [1m[92m   Compiling[0m icu_normalizer v2.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:46.0157015Z [1m[92m   Compiling[0m serde_with_macros v3.16.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:46.6905597Z [1m[92m   Compiling[0m phf_codegen v0.11.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:46.8344245Z [1m[92m   Compiling[0m string_cache_codegen v0.5.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:47.4336573Z [1m[92m   Compiling[0m windows-sys v0.61.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:47.6403189Z [1m[92m   Compiling[0m winnow v0.7.14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:47.6500982Z [1m[92m   Compiling[0m mac v0.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:47.7124335Z [1m[92m   Compiling[0m precomputed-hash v0.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:47.7833794Z [1m[92m   Compiling[0m futf v0.1.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:47.9091436Z [1m[92m   Compiling[0m markup5ever v0.14.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:48.5589315Z [1m[92m   Compiling[0m phf_macros v0.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:49.7083963Z [1m[92m   Compiling[0m idna_adapter v1.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:50.1618148Z [1m[92m   Compiling[0m toml_parser v1.0.9+spec-1.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:51.0618740Z [1m[92m   Compiling[0m parking_lot v0.12.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:51.1455900Z [1m[92m   Compiling[0m phf_codegen v0.8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:51.2594506Z [1m[92m   Compiling[0m cssparser v0.29.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:51.6395019Z [1m[92m   Compiling[0m serde_spanned v1.0.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:51.7701517Z [1m[92m   Compiling[0m semver v1.0.27
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:51.7844986Z [1m[92m   Compiling[0m toml_datetime v0.7.5+spec-1.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:52.1508021Z [1m[92m   Compiling[0m log v0.4.29
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:52.2080356Z [1m[92m   Compiling[0m utf8_iter v1.0.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:52.3581963Z [1m[92m   Compiling[0m bitflags v1.3.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:52.3766890Z [1m[92m   Compiling[0m toml_writer v1.0.6+spec-1.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:52.4327862Z [1m[92m   Compiling[0m percent-encoding v2.3.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:52.6241915Z [1m[92m   Compiling[0m utf-8 v0.7.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:52.6497859Z [1m[92m   Compiling[0m dtoa v1.0.11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:52.7982333Z [1m[92m   Compiling[0m dtoa-short v0.3.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:52.8051864Z [1m[92m   Compiling[0m tendril v0.4.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:52.9152478Z [1m[92m   Compiling[0m toml v0.9.12+spec-1.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:53.1280620Z [1m[92m   Compiling[0m form_urlencoded v1.2.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:53.3089185Z [1m[92m   Compiling[0m idna v1.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:54.2266698Z [1m[92m   Compiling[0m string_cache v0.8.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:54.3759622Z [1m[92m   Compiling[0m selectors v0.24.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:54.4870016Z [1m[92m   Compiling[0m uuid v1.21.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:54.9783373Z [1m[92m   Compiling[0m phf v0.10.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:55.1648675Z [1m[92m   Compiling[0m phf v0.11.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:55.2807966Z [1m[92m   Compiling[0m cssparser-macros v0.6.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:55.3646771Z [1m[92m   Compiling[0m ctor v0.2.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:55.5806509Z [1m[92m   Compiling[0m indexmap v1.9.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:55.8322028Z [1m[92m   Compiling[0m aho-corasick v1.1.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:55.8847580Z [1m[92m   Compiling[0m libc v0.2.182
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:56.1292544Z [1m[92m   Compiling[0m regex-syntax v0.8.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:56.4226744Z [1m[92m   Compiling[0m convert_case v0.4.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:56.9252617Z [1m[92m   Compiling[0m unic-char-range v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:57.0456604Z [1m[92m   Compiling[0m unic-common v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:57.1450091Z [1m[92m   Compiling[0m nodrop v0.1.14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:57.2265357Z [1m[92m   Compiling[0m matches v0.1.10
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:57.2846181Z [1m[92m   Compiling[0m camino v1.2.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:57.6799629Z [1m[92m   Compiling[0m alloc-no-stdlib v2.0.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:57.8035486Z [1m[92m   Compiling[0m alloc-stdlib v0.2.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:58.8853761Z [1m[92m   Compiling[0m regex-automata v0.4.14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:59.0569093Z [1m[92m   Compiling[0m servo_arc v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:59.2519165Z [1m[92m   Compiling[0m unic-ucd-version v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:59.3090086Z [1m[92m   Compiling[0m unic-char-property v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:56:59.4195964Z [1m[92m   Compiling[0m derive_more v0.99.20
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:00.3029532Z [1m[92m   Compiling[0m url v2.5.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:01.2071157Z [1m[92m   Compiling[0m winapi-util v0.1.11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:01.4723679Z [1m[92m   Compiling[0m fxhash v0.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:01.5479746Z [1m[92m   Compiling[0m match_token v0.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:01.5944534Z [1m[92m   Compiling[0m phf v0.8.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:01.7198031Z [1m[92m   Compiling[0m serde_derive_internals v0.29.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:02.3144074Z [1m[92m   Compiling[0m schemars v0.8.22
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:02.5583481Z [1m[92m   Compiling[0m equivalent v1.0.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:02.6327626Z [1m[92m   Compiling[0m windows_x86_64_msvc v0.52.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:02.8784643Z [1m[92m   Compiling[0m hashbrown v0.12.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:03.2703761Z [1m[92m   Compiling[0m hashbrown v0.16.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:04.1170175Z [1m[92m   Compiling[0m indexmap v2.13.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:04.1921664Z [1m[92m   Compiling[0m schemars_derive v0.8.22
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:04.8975080Z [1m[92m   Compiling[0m html5ever v0.29.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:05.0030198Z [1m[92m   Compiling[0m regex v1.12.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:05.1206222Z [1m[92m   Compiling[0m same-file v1.0.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:05.2639325Z [1m[92m   Compiling[0m unic-ucd-ident v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:05.6451913Z [1m[92m   Compiling[0m brotli-decompressor v5.0.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:06.1283562Z [1m[92m   Compiling[0m cfb v0.7.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:06.1382971Z [1m[92m   Compiling[0m jsonptr v0.6.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:06.1738881Z [1m[92m   Compiling[0m cargo-platform v0.1.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:06.5955449Z [1m[92m   Compiling[0m bytes v1.11.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:06.7729114Z [1m[92m   Compiling[0m dunce v1.0.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:06.9399197Z [1m[92m   Compiling[0m dyn-clone v1.0.20
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:07.1403310Z [1m[92m   Compiling[0m brotli v8.0.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:07.2489376Z [1m[92m   Compiling[0m infer v0.19.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:07.5600332Z [1m[92m   Compiling[0m http v1.4.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:08.3350165Z [1m[92m   Compiling[0m json-patch v3.0.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:08.9746344Z [1m[92m   Compiling[0m cargo_metadata v0.19.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:09.0151897Z [1m[92m   Compiling[0m kuchikiki v0.8.8-speedreader
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:09.3497363Z [1m[92m   Compiling[0m urlpattern v0.3.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:09.8442385Z [1m[92m   Compiling[0m walkdir v2.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:10.2563684Z [1m[92m   Compiling[0m serde-untagged v0.1.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:10.5694643Z [1m[92m   Compiling[0m serde_with v3.16.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:10.9454521Z [1m[92m   Compiling[0m glob v0.3.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:12.0103951Z [1m[92m   Compiling[0m windows_x86_64_msvc v0.53.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:13.1914566Z [1m[92m   Compiling[0m vswhom-sys v0.1.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:13.2048709Z [1m[92m   Compiling[0m windows-link v0.1.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:13.2562033Z [1m[92m   Compiling[0m pin-project-lite v0.2.16
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:13.3366727Z [1m[92m   Compiling[0m tauri-utils v2.8.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:13.8378474Z [1m[92m   Compiling[0m windows-targets v0.53.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:13.8872344Z [1m[92m   Compiling[0m windows-targets v0.52.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:13.9383511Z [1m[92m   Compiling[0m version_check v0.9.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:14.2735287Z [1m[92m   Compiling[0m once_cell v1.21.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:14.4976627Z [1m[92m   Compiling[0m windows-sys v0.59.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:14.5458684Z [1m[92m   Compiling[0m windows-sys v0.60.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:17.9105190Z [1m[92m   Compiling[0m vswhom v0.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:18.0324543Z [1m[92m   Compiling[0m windows-strings v0.4.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:18.6534970Z [1m[92m   Compiling[0m windows-result v0.3.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:19.0300305Z [1m[92m   Compiling[0m winreg v0.55.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:19.2886609Z [1m[92m   Compiling[0m rustc_version v0.4.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:19.4550232Z [1m[92m   Compiling[0m windows-implement v0.60.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:19.6602020Z [1m[92m   Compiling[0m windows-interface v0.59.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:20.7480908Z [1m[92m   Compiling[0m option-ext v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:20.8681229Z [1m[92m   Compiling[0m dirs-sys v0.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:20.9780199Z [1m[92m   Compiling[0m windows-core v0.61.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:21.8485505Z [1m[92m   Compiling[0m embed-resource v3.0.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:22.2190164Z [1m[92m   Compiling[0m heck v0.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:22.6483542Z [1m[92m   Compiling[0m tauri-winres v0.3.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:23.7221918Z [1m[92m   Compiling[0m tauri-plugin v2.5.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:24.0073583Z [1m[92m   Compiling[0m dirs v6.0.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:24.3143781Z [1m[92m   Compiling[0m cargo_toml v0.22.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:24.6069100Z [1m[92m   Compiling[0m windows-threading v0.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:24.7336576Z [1m[92m   Compiling[0m crc32fast v1.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:25.3147723Z [1m[92m   Compiling[0m windows-future v0.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:26.3446337Z [1m[92m   Compiling[0m tauri-build v2.5.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:28.3717706Z [1m[92m   Compiling[0m windows-numerics v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:28.6783659Z [1m[92m   Compiling[0m windows-collections v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:29.0399241Z [1m[92m   Compiling[0m socket2 v0.6.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:29.5961109Z [1m[92m   Compiling[0m mio v1.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:30.0630516Z [1m[92m   Compiling[0m tokio-macros v2.6.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:30.2173194Z [1m[92m   Compiling[0m typenum v1.19.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:31.1141958Z [1m[92m   Compiling[0m tokio v1.49.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:31.3379789Z [1m[92m   Compiling[0m windows v0.61.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:31.8630667Z [1m[92m   Compiling[0m generic-array v0.14.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:39.8995813Z [1m[92m   Compiling[0m tauri v2.10.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:41.4222317Z [1m[92m   Compiling[0m futures-core v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:46.2349690Z [1m[92m   Compiling[0m bitflags v2.11.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:46.7408661Z [1m[92m   Compiling[0m crossbeam-utils v0.8.21
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:47.1020601Z [1m[92m   Compiling[0m raw-window-handle v0.6.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:47.4435036Z [1m[92m   Compiling[0m simd-adler32 v0.3.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:49.7073276Z [1m[92m   Compiling[0m tracing-core v0.1.36
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:50.2016104Z [1m[92m   Compiling[0m dpi v0.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:50.7596277Z [1m[92m   Compiling[0m webview2-com-sys v0.38.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:50.9852993Z [1m[92m   Compiling[0m windows-version v0.1.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:51.0668877Z [1m[92m   Compiling[0m time-core v0.1.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:51.2380100Z [1m[92m   Compiling[0m powerfmt v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:51.2490121Z [1m[92m   Compiling[0m adler2 v2.0.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:51.3677532Z [1m[92m   Compiling[0m num-conv v0.2.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:51.7025287Z [1m[92m   Compiling[0m time-macros v0.2.27
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:51.7517265Z [1m[92m   Compiling[0m deranged v0.5.6
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:53.9681297Z [1m[92m   Compiling[0m miniz_oxide v0.8.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:54.8491740Z [1m[92m   Compiling[0m tracing v0.1.44
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:55.1801811Z [1m[92m   Compiling[0m cookie v0.18.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:56.2472904Z [1m[92m   Compiling[0m unicode-segmentation v1.12.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:56.4235133Z [1m[92m   Compiling[0m getrandom v0.3.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:57.0561690Z [1m[92m   Compiling[0m time v0.3.47
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:57:59.3010542Z [1m[92m   Compiling[0m crossbeam-channel v0.5.15
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:01.0297798Z [1m[92m   Compiling[0m flate2 v1.1.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:01.9709608Z [1m[92m   Compiling[0m crypto-common v0.1.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:02.2962032Z [1m[92m   Compiling[0m block-buffer v0.10.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:02.3431159Z [1m[92m   Compiling[0m fdeflate v0.3.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:03.3096937Z [1m[92m   Compiling[0m webview2-com-macros v0.8.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:06.2570614Z [1m[92m   Compiling[0m png v0.17.16
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:08.1937409Z [1m[92m   Compiling[0m digest v0.10.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:13.1566938Z [1m[92m   Compiling[0m ring v0.17.14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:14.0493563Z [1m[92m   Compiling[0m tauri-runtime v2.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:14.3050667Z [1m[92m   Compiling[0m wry v0.54.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:14.8831878Z [1m[92m   Compiling[0m cpufeatures v0.2.17
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:14.9737154Z [1m[92m   Compiling[0m sha2 v0.10.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:15.9220919Z [1m[92m   Compiling[0m ico v0.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:16.9913279Z [1m[92m   Compiling[0m keyboard-types v0.7.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:20.9323586Z [1m[92m   Compiling[0m lazy_static v1.5.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:21.0143304Z [1m[92m   Compiling[0m base64 v0.22.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:21.4671506Z [1m[92m   Compiling[0m tauri-runtime-wry v2.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:21.7326881Z [1m[92m   Compiling[0m tauri-codegen v2.5.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:22.4929705Z [1m[92m   Compiling[0m muda v0.17.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:25.8112367Z [1m[92m   Compiling[0m tao v0.34.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:32.1242173Z [1m[92m   Compiling[0m webview2-com v0.38.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:34.6510503Z [1m[92m   Compiling[0m softbuffer v0.4.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:39.2113212Z [1m[92m   Compiling[0m serialize-to-javascript-impl v0.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:39.4494230Z [1m[92m   Compiling[0m untrusted v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:39.5730624Z [1m[92m   Compiling[0m zeroize v1.8.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:39.6886970Z [1m[92m   Compiling[0m serialize-to-javascript v0.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:39.7617368Z [1m[92m   Compiling[0m rustls-pki-types v1.14.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:42.9640743Z [1m[92m   Compiling[0m window-vibrancy v0.6.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:43.2279644Z [1m[92m   Compiling[0m tauri-macros v2.5.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:43.7915287Z [1m[92m   Compiling[0m tray-icon v0.21.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:43.8728040Z [1m[92m   Compiling[0m http-body v1.0.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:44.0224424Z [1m[92m   Compiling[0m futures-macro v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:44.6202633Z [1m[92m   Compiling[0m serde_repr v0.1.20
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:45.2333918Z [1m[92m   Compiling[0m rustls v0.23.36
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:45.2752203Z [1m[92m   Compiling[0m httparse v1.10.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:45.4268668Z [1m[92m   Compiling[0m mime v0.3.17
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:45.6227902Z [1m[92m   Compiling[0m slab v0.4.12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:45.7332943Z [1m[92m   Compiling[0m futures-task v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:45.8862745Z [1m[92m   Compiling[0m futures-util v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:45.9510216Z [1m[92m   Compiling[0m rustls-webpki v0.103.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:45.9769153Z [1m[92m   Compiling[0m tower-service v0.3.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:46.0593016Z [1m[92m   Compiling[0m try-lock v0.2.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:46.1570137Z [1m[92m   Compiling[0m subtle v2.6.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:46.3300941Z [1m[92m   Compiling[0m windows_x86_64_msvc v0.48.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:46.5938132Z [1m[92m   Compiling[0m want v0.3.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:48.9583970Z [1m[92m   Compiling[0m futures-channel v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:49.2489216Z [1m[92m   Compiling[0m tauri-plugin-fs v2.4.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:49.4950974Z [1m[92m   Compiling[0m pin-utils v0.1.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:49.5576715Z [1m[92m   Compiling[0m atomic-waker v1.1.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:49.6712719Z [1m[92m   Compiling[0m fastrand v2.3.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:50.0010189Z [1m[92m   Compiling[0m hyper v1.8.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:52.9247280Z [1m[92m   Compiling[0m sync_wrapper v1.0.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:53.0153548Z [1m[92m   Compiling[0m tower-layer v0.3.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:54.0919833Z [1m[92m   Compiling[0m ipnet v2.11.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:55.9958757Z [1m[92m   Compiling[0m hyper-util v0.1.20
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:58.1847751Z [1m[92m   Compiling[0m tower v0.5.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:58.7529403Z [1m[92m   Compiling[0m windows-targets v0.48.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:58.8119915Z [1m[92m   Compiling[0m tokio-rustls v0.26.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:58.9986690Z [1m[92m   Compiling[0m rand_core v0.9.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:59.1737733Z [1m[92m   Compiling[0m tauri-plugin-dialog v2.6.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:58:59.3043852Z [1m[92m   Compiling[0m tauri-plugin-process v2.3.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:00.1743092Z [1m[92m   Compiling[0m tauri-plugin-updater v2.10.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:00.2787715Z [1m[92m   Compiling[0m tauri-plugin-shell v2.3.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:01.1306754Z [1m[92m   Compiling[0m tauri-plugin-notification v2.3.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:01.5477760Z [1m[92m   Compiling[0m quick-xml v0.37.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:02.1297954Z [1m[92m   Compiling[0m num-traits v0.2.19
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:02.3655212Z [1m[92m   Compiling[0m futures-io v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:02.5650660Z [1m[92m   Compiling[0m parking v2.2.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:02.7528324Z [1m[92m   Compiling[0m once_cell_polyfill v1.70.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:02.8438280Z [1m[92m   Compiling[0m anstyle v1.0.13
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:02.8611053Z [1m[92m   Compiling[0m iri-string v0.7.10
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:03.1496563Z [1m[92m   Compiling[0m rfd v0.16.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:03.2963288Z [1m[92m   Compiling[0m utf8parse v0.2.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:03.3823497Z [1m[92m   Compiling[0m futures-sink v0.3.32
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:03.4147111Z [1m[92m   Compiling[0m anstyle-parse v0.2.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:03.4824841Z [1m[92m   Compiling[0m tokio-util v0.7.18
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:03.5378629Z [1m[92m   Compiling[0m anstyle-wincon v3.0.11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:03.6430898Z [1m[92m   Compiling[0m futures-lite v2.6.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:03.9314186Z [1m[92m   Compiling[0m tauri-winrt-notification v0.7.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:04.7910438Z [1m[92m   Compiling[0m rand_chacha v0.9.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:04.8420864Z [1m[92m   Compiling[0m hyper-rustls v0.27.7
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:04.9148855Z [1m[92m   Compiling[0m windows-sys v0.48.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:05.2201429Z [1m[92m   Compiling[0m tower-http v0.6.8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:05.6902967Z [1m[92m   Compiling[0m rustls-platform-verifier v0.6.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:06.2353037Z [1m[92m   Compiling[0m http-body-util v0.1.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:06.2639386Z [1m[92m   Compiling[0m anstyle-query v1.1.5
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:06.4395505Z [1m[92m   Compiling[0m is_terminal_polyfill v1.70.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:06.4585092Z [1m[92m   Compiling[0m colorchoice v1.0.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:06.5185933Z [1m[92m   Compiling[0m rand v0.9.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:06.5577993Z [1m[92m   Compiling[0m reqwest v0.13.2
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:06.5631252Z [1m[92m   Compiling[0m anstream v0.6.21
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:07.2838233Z [1m[92m   Compiling[0m dirs-sys v0.4.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:07.3374111Z [1m[92m   Compiling[0m zip v4.6.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:07.4176153Z [1m[92m   Compiling[0m notify-rust v4.12.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:08.0265303Z [1m[92m   Compiling[0m tempfile v3.25.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:09.4964655Z [1m[92m   Compiling[0m open v5.3.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:09.7632992Z [1m[92m   Compiling[0m env_filter v1.0.0
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:10.1887091Z [1m[92m   Compiling[0m openclaw-manager v0.0.13 (D:\a\openclaw-manager\openclaw-manager\src-tauri)
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:10.5202572Z [1m[92m   Compiling[0m shared_child v1.1.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:10.6584941Z [1m[92m   Compiling[0m os_pipe v1.2.3
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:10.7647723Z [1m[92m   Compiling[0m encoding_rs v0.8.35
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:10.8222069Z [1m[92m   Compiling[0m unsafe-libyaml v0.2.11
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:11.4056197Z [1m[92m   Compiling[0m minisign-verify v0.2.4
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:13.1759665Z [1m[92m   Compiling[0m ryu v1.0.23
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:13.1972852Z [1m[92m   Compiling[0m jiff v0.2.20
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:13.4697175Z [1m[92m   Compiling[0m serde_yaml v0.9.34+deprecated
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:19.0516898Z [1m[92m   Compiling[0m env_logger v0.11.9
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:19.3250530Z [1m[92m   Compiling[0m chrono v0.4.43
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:19.9879575Z [1m[92m   Compiling[0m dirs v5.0.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8821188Z [1m[93mwarning[0m[1m[97m: function `send_test_message` is never used[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8823692Z    [1m[96m--> [0msrc\commands\diagnostics.rs:484:14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8825794Z     [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8829841Z [1m[96m484[0m [1m[96m|[0m pub async fn send_test_message(channel_type: String, target: String) -> Result<ChannelTestResult, String> {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8831551Z     [1m[96m|[0m              [1m[93m^^^^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8832104Z     [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8832830Z     [1m[96m= [0m[1m[97mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8833350Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8834198Z [1m[93mwarning[0m[1m[97m: struct `InstallProgress` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8835070Z   [1m[96m--> [0msrc\commands\installer.rs:35:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8835583Z    [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8836156Z [1m[96m35[0m [1m[96m|[0m pub struct InstallProgress {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8837335Z    [1m[96m|[0m            [1m[93m^^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8837653Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8838188Z [1m[93mwarning[0m[1m[97m: function `get_node_version` is never used[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8838690Z   [1m[96m--> [0msrc\commands\process.rs:99:14
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8838977Z    [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8839629Z [1m[96m99[0m [1m[96m|[0m pub async fn get_node_version() -> Result<Option<String>, String> {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8840545Z    [1m[96m|[0m              [1m[93m^^^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8840738Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8841048Z [1m[93mwarning[0m[1m[97m: struct `OpenClawConfig` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8841649Z  [1m[96m--> [0msrc\models\config.rs:6:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8841927Z   [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8842254Z [1m[96m6[0m [1m[96m|[0m pub struct OpenClawConfig {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8842639Z   [1m[96m|[0m            [1m[93m^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8842824Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8843129Z [1m[93mwarning[0m[1m[97m: struct `AgentsConfig` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8843557Z   [1m[96m--> [0msrc\models\config.rs:32:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8843824Z    [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8844137Z [1m[96m32[0m [1m[96m|[0m pub struct AgentsConfig {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8844517Z    [1m[96m|[0m            [1m[93m^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8844704Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8845016Z [1m[93mwarning[0m[1m[97m: struct `AgentDefaults` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8845439Z   [1m[96m--> [0msrc\models\config.rs:40:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8845700Z    [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8846013Z [1m[96m40[0m [1m[96m|[0m pub struct AgentDefaults {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8846376Z    [1m[96m|[0m            [1m[93m^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8846555Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8846861Z [1m[93mwarning[0m[1m[97m: struct `AgentModelConfig` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8847292Z   [1m[96m--> [0msrc\models\config.rs:66:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8847551Z    [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8847872Z [1m[96m66[0m [1m[96m|[0m pub struct AgentModelConfig {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8848249Z    [1m[96m|[0m            [1m[93m^^^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8848431Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8848717Z [1m[93mwarning[0m[1m[97m: struct `ModelsConfig` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8849122Z   [1m[96m--> [0msrc\models\config.rs:74:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8849380Z    [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8849680Z [1m[96m74[0m [1m[96m|[0m pub struct ModelsConfig {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8850035Z    [1m[96m|[0m            [1m[93m^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8850211Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8850516Z [1m[93mwarning[0m[1m[97m: struct `ProviderConfig` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8850931Z   [1m[96m--> [0msrc\models\config.rs:82:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8851186Z    [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8851495Z [1m[96m82[0m [1m[96m|[0m pub struct ProviderConfig {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8851861Z    [1m[96m|[0m            [1m[93m^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8852040Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8852333Z [1m[93mwarning[0m[1m[97m: struct `GatewayConfig` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8852752Z    [1m[96m--> [0msrc\models\config.rs:136:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8853017Z     [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8853333Z [1m[96m136[0m [1m[96m|[0m pub struct GatewayConfig {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8853700Z     [1m[96m|[0m            [1m[93m^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8853877Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8854189Z [1m[93mwarning[0m[1m[97m: struct `GatewayAuthConfig` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8854648Z    [1m[96m--> [0msrc\models\config.rs:147:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8854921Z     [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8855267Z [1m[96m147[0m [1m[96m|[0m pub struct GatewayAuthConfig {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8855667Z     [1m[96m|[0m            [1m[93m^^^^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8855861Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8856162Z [1m[93mwarning[0m[1m[97m: struct `PluginsConfig` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8856581Z    [1m[96m--> [0msrc\models\config.rs:156:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8856843Z     [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8857500Z [1m[96m156[0m [1m[96m|[0m pub struct PluginsConfig {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8857917Z     [1m[96m|[0m            [1m[93m^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8858226Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8858534Z [1m[93mwarning[0m[1m[97m: struct `MetaConfig` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8858956Z    [1m[96m--> [0msrc\models\config.rs:191:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8859229Z     [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8859801Z [1m[96m191[0m [1m[96m|[0m pub struct MetaConfig {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8860336Z     [1m[96m|[0m            [1m[93m^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8860523Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8860810Z [1m[93mwarning[0m[1m[97m: struct `EnvConfig` is never constructed[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8861236Z    [1m[96m--> [0msrc\models\config.rs:330:12
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8861498Z     [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8861799Z [1m[96m330[0m [1m[96m|[0m pub struct EnvConfig {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8862149Z     [1m[96m|[0m            [1m[93m^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8862322Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8862600Z [1m[93mwarning[0m[1m[97m: function `append_file` is never used[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8862990Z   [1m[96m--> [0msrc\utils\file.rs:20:8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8863245Z    [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8865409Z [1m[96m20[0m [1m[96m|[0m pub fn append_file(path: &str, content: &str) -> io::Result<()> {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8866159Z    [1m[96m|[0m        [1m[93m^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8866350Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8866659Z [1m[93mwarning[0m[1m[97m: function `read_last_lines` is never used[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8867088Z   [1m[96m--> [0msrc\utils\file.rs:38:8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8867344Z    [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8867944Z [1m[96m38[0m [1m[96m|[0m pub fn read_last_lines(path: &str, n: usize) -> io::Result<Vec<String>> {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8868458Z    [1m[96m|[0m        [1m[93m^^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8868652Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8868946Z [1m[93mwarning[0m[1m[97m: function `get_log_file_path` is never used[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8869369Z   [1m[96m--> [0msrc\utils\platform.rs:54:8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8869629Z    [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8869990Z [1m[96m54[0m [1m[96m|[0m pub fn get_log_file_path() -> String {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8870423Z    [1m[96m|[0m        [1m[93m^^^^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8870613Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8870900Z [1m[93mwarning[0m[1m[97m: function `run_script_output` is never used[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8871313Z    [1m[96m--> [0msrc\utils\shell.rs:211:8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8871573Z     [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8872031Z [1m[96m211[0m [1m[96m|[0m pub fn run_script_output(script: &str) -> Result<String, String> {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8872521Z     [1m[96m|[0m        [1m[93m^^^^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8872714Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8872994Z [1m[93mwarning[0m[1m[97m: function `spawn_background` is never used[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8873405Z    [1m[96m--> [0msrc\utils\shell.rs:220:8
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8873659Z     [1m[96m|[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8874132Z [1m[96m220[0m [1m[96m|[0m pub fn spawn_background(script: &str) -> io::Result<()> {
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8874589Z     [1m[96m|[0m        [1m[93m^^^^^^^^^^^^^^^^[0m
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T03:59:27.8874774Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:02:48.8201095Z [1m[93mwarning[0m: `openclaw-manager` (bin "openclaw-manager") generated 19 warnings
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:02:48.8202941Z [1m[92m    Finished[0m `release` profile [optimized] target(s) in 7m 00s
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:02:49.0749290Z        Built application at: D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\openclaw-manager.exe
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:02:49.1103114Z         Info Verifying wix package
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:02:49.1104533Z  Downloading https://github.com/wixtoolset/wix3/releases/download/wix3141rtm/wix314-binaries.zip
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:02:49.3751550Z         Info validating hash
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:02:49.5000208Z         Info extracting WIX
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:02:51.4163140Z         Info Target: x64
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:02:51.4289905Z      Running candle for "D:\\a\\openclaw-manager\\openclaw-manager\\src-tauri\\target\\x86_64-pc-windows-msvc\\release\\wix\\x64\\main.wxs"
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:02:56.8495070Z      Running light to produce D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\msi\OpenClaw Manager_0.0.13_x64_en-US.msi
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:04.6730847Z         Info Verifying NSIS package
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:04.6731690Z  Downloading https://github.com/tauri-apps/binary-releases/releases/download/nsis-3.11/nsis-3.11.zip
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:04.9471206Z         Info validating hash
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:04.9484222Z         Info extracting NSIS
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:05.1970006Z  Downloading https://github.com/tauri-apps/nsis-tauri-utils/releases/download/nsis_tauri_utils-v0.5.3/nsis_tauri_utils.dll
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:05.4589773Z         Info validating hash
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:05.4597395Z         Info Target: x64
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:05.4702016Z      Running makensis to produce D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\nsis\OpenClaw Manager_0.0.13_x64-setup.exe
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.4687082Z     Finished 2 bundles at:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.4688390Z         D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\msi\OpenClaw Manager_0.0.13_x64_en-US.msi
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.4690387Z         D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\nsis\OpenClaw Manager_0.0.13_x64-setup.exe
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.4691379Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6410851Z     Finished 2 updater signatures at:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6411881Z         D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\msi\OpenClaw Manager_0.0.13_x64_en-US.msi.sig
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6413527Z         D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\nsis\OpenClaw Manager_0.0.13_x64-setup.exe.sig
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6414219Z 
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6807425Z Looking for artifacts in:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6808772Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\msi\OpenClaw Manager_0.0.13_x64_en-US.msi
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6810730Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\msi\OpenClaw Manager_0.0.13_x64_en-US.msi.sig
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6812167Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\msi\OpenClaw Manager_0.0.13_x64_en-US.msi.zip
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6813721Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\msi\OpenClaw Manager_0.0.13_x64_en-US.msi.zip.sig
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6815345Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\nsis\OpenClaw Manager_0.0.13_x64-setup.exe
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6816622Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\nsis\OpenClaw Manager_0.0.13_x64-setup.exe.sig
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6817862Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\nsis\OpenClaw Manager_0.0.13_x64-setup.nsis.zip
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6819159Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\nsis\OpenClaw Manager_0.0.13_x64-setup.nsis.zip.sig
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6819937Z Found artifacts:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6820698Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\msi\OpenClaw Manager_0.0.13_x64_en-US.msi
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6821916Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\msi\OpenClaw Manager_0.0.13_x64_en-US.msi.sig
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6823130Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\nsis\OpenClaw Manager_0.0.13_x64-setup.exe
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.6824360Z D:\a\openclaw-manager\openclaw-manager\src-tauri\target\x86_64-pc-windows-msvc\release\bundle\nsis\OpenClaw Manager_0.0.13_x64-setup.exe.sig
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:09.9719939Z Uploading OpenClaw Manager_0.0.13_x64_en-US.msi...
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:10.8015774Z Uploading OpenClaw Manager_0.0.13_x64_en-US.msi.sig...
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:11.3431175Z Uploading OpenClaw Manager_0.0.13_x64-setup.exe...
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:12.0653915Z Uploading OpenClaw Manager_0.0.13_x64-setup.exe.sig...
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:12.8702346Z ##[error]Not Found - https://docs.github.com/rest/releases/assets#get-a-release-asset
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:12.9041466Z Post job cleanup.
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.1439300Z [command]"C:\Program Files\Git\bin\git.exe" version
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.1743839Z git version 2.53.0.windows.1
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.1824373Z Temporarily overriding HOME='D:\a\_temp\87f80340-8bfe-48f5-9073-1574b8f280bd' before making global git config changes
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.1825242Z Adding repository directory to the temporary git global config as a safe directory
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.1836716Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\openclaw-manager\openclaw-manager
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.2183957Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.2533553Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.8238562Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.8535008Z http.https://github.com/.extraheader
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.8583590Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:13.8914673Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:14.4436611Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:14.4749356Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:15.0422852Z Cleaning up orphan processes
+build (windows-latest, x86_64-pc-windows-msvc, Windows)	UNKNOWN STEP	2026-02-20T04:03:15.0787017Z Terminate orphan process: pid (1308) (vctip)
