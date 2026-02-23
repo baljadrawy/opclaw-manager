@@ -37,12 +37,14 @@ jobs:
             |----------|------|
             | **Windows** (installer) | `.msi` or `.exe` |
             | **macOS** (Apple Silicon & Intel) | `.dmg` |
-            | **Linux** | `.deb` or `.AppImage` |
+            | **Linux x86_64** | `.deb` or `.AppImage` |
+            | **Raspberry Pi 4+ (ARM64)** | `.deb` or `.AppImage` |
 
             ### What's New
-            - **Self-Update Feature**: Check for and install Manager updates directly from Settings — no more manual downloads!
-            - **Signed Releases**: All release artifacts are now cryptographically signed for secure updates.
-            - **Manager Update UI**: New "Manager Update" card in Settings with version check, download progress bar, and one-click restart.
+            - **Raspberry Pi Support**: Native ARM64 build for Raspberry Pi 4 and newer!
+            - **Self-Update Feature**: Check for and install Manager updates directly from Settings.
+            - **Signed Releases**: All release artifacts are now cryptographically signed.
+            - **Manager Update UI**: New "Manager Update" card in Settings.
             - **Updater Plugin**: Integrated Tauri v2 updater plugin with GitHub Releases endpoint.
 
             See the [full changelog](https://github.com/${{ github.repository }}/commits/${{ github.ref_name }}) for details.
@@ -66,13 +68,16 @@ jobs:
             label: macOS (Intel)
           - platform: ubuntu-22.04
             target: x86_64-unknown-linux-gnu
-            label: Linux
+            label: Linux x86_64
+          - platform: ubuntu-22.04
+            target: aarch64-unknown-linux-gnu
+            label: Linux (Raspberry Pi ARM64)
 
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Linux dependencies
+      - name: Install Linux base dependencies
         if: matrix.platform == 'ubuntu-22.04'
         run: |
           sudo apt-get update
@@ -85,7 +90,31 @@ jobs:
             libxdo-dev \
             libssl-dev \
             libayatana-appindicator3-dev \
-            librsvg2-dev
+            librsvg2-dev \
+            gcc-aarch64-linux-gnu
+
+      - name: Install ARM64 cross-compile dependencies
+        if: matrix.target == 'aarch64-unknown-linux-gnu'
+        run: |
+          sudo dpkg --add-architecture arm64
+          sudo bash -c 'cat > /etc/apt/sources.list.d/arm64.list << EOF
+          deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports jammy main restricted
+          deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports jammy-updates main restricted
+          EOF'
+          sudo apt-get update || true
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev:arm64 \
+            libssl-dev:arm64 \
+            libayatana-appindicator3-dev:arm64 \
+            librsvg2-dev:arm64 \
+            libxdo-dev:arm64
+
+      - name: Set ARM64 environment variables
+        if: matrix.target == 'aarch64-unknown-linux-gnu'
+        run: |
+          echo "PKG_CONFIG_SYSROOT_DIR=/usr/aarch64-linux-gnu" >> $GITHUB_ENV
+          echo "PKG_CONFIG_PATH=/usr/lib/aarch64-linux-gnu/pkgconfig" >> $GITHUB_ENV
+          echo "CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER=aarch64-linux-gnu-gcc" >> $GITHUB_ENV
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
