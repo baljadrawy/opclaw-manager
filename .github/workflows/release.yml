@@ -2,6 +2,8 @@ name: Release
 
 on:
   push:
+    branches:
+      - rpi-build
     tags:
       - 'v*'
   workflow_dispatch:
