@@ -27,6 +27,7 @@ export interface EnvironmentStatus {
   git_version: string | null;
   openclaw_installed: boolean;
   openclaw_version: string | null;
+  gateway_service_installed: boolean;
   config_dir_exists: boolean;
   ready: boolean;
   os: string;

@@ -363,7 +363,7 @@ export function Agents() {
                         <button
                             onClick={() => {
                                 setEditingAgent(null);
-                                setAgentForm({ id: '', name: null, workspace: openclawHomeDir || null, agent_dir: null, model: null, sandbox: null, heartbeat: null, default: null, subagents: null });
+                                setAgentForm({ id: '', name: null, workspace: null, agent_dir: null, model: null, sandbox: null, heartbeat: null, default: null, subagents: null });
 
                                 setShowAgentDialog(true);
                             }}

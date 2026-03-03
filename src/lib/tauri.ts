@@ -69,6 +69,7 @@ export interface OfficialProvider {
   api_type: string;
   suggested_models: SuggestedModel[];
   requires_api_key: boolean;
+  default_api_key: string | null;
   docs_url: string | null;
 }
 
@@ -162,6 +163,16 @@ export interface Skill {
   path: string;
 }
 
+// 2026.3.2 Features
+export interface PdfConfig {
+  max_pages: number | null;
+  max_bytes_mb: number | null;
+}
+
+export interface MemoryConfig {
+  provider: string | null;
+}
+
 // API wrapper (with logging)
 export const api = {
   // Service management
@@ -175,6 +186,9 @@ export const api = {
   getSystemInfo: () => invokeWithLog<SystemInfo>('get_system_info'),
   checkOpenclawInstalled: () => invokeWithLog<boolean>('check_openclaw_installed'),
   getOpenclawVersion: () => invokeWithLog<string | null>('get_openclaw_version'),
+  checkOllamaInstalled: () => invokeWithLog<boolean>('check_ollama_installed'),
+  getOllamaModels: () => invokeWithLog<string[]>('get_ollama_models'),
+  installOllamaModel: (modelName: string) => invokeWithLog<string>('install_ollama_model', { modelName }),
 
   // Configuration management
   getConfig: () => invokeWithLog<unknown>('get_config'),
@@ -182,6 +196,15 @@ export const api = {
   getEnvValue: (key: string) => invokeWithLog<string | null>('get_env_value', { key }),
   saveEnvValue: (key: string, value: string) =>
     invokeWithLog<string>('save_env_value', { key, value }),
+
+  // 2026.3.2 Features
+  getToolsProfile: () => invokeWithLog<string>('get_tools_profile'),
+  saveToolsProfile: (profile: string) => invokeWithLog<string>('save_tools_profile', { profile }),
+  getPdfConfig: () => invokeWithLog<PdfConfig>('get_pdf_config'),
+  savePdfConfig: (pdfConfig: PdfConfig) => invokeWithLog<string>('save_pdf_config', { pdfConfig }),
+  getMemoryConfig: () => invokeWithLog<MemoryConfig>('get_memory_config'),
+  saveMemoryConfig: (memoryConfig: MemoryConfig) => invokeWithLog<string>('save_memory_config', { memoryConfig }),
+  validateOpenclawConfig: (configJson: string) => invokeWithLog<string>('validate_openclaw_config', { configJson }),
 
   // AI Provider (legacy compatibility)
   getAIProviders: () => invokeWithLog<AIProviderOption[]>('get_ai_providers'),

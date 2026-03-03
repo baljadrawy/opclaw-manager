@@ -38,8 +38,8 @@ pub async fn check_port_in_use(port: u16) -> Result<bool, String> {
     // Use openclaw health to check if gateway is running
     // If port is the default 18789, use openclaw health directly
     if port == 18789 {
-        debug!("[Process Check] Using openclaw health to check port 18789...");
-        let result = shell::run_openclaw(&["health", "--timeout", "2000"]);
+        debug!("[Process Check] Using openclaw gateway health to check port 18789...");
+        let result = shell::run_openclaw(&["gateway", "health", "--timeout", "2000"]);
         // If health command succeeds, the port is occupied by gateway
         let in_use = result.is_ok();
         info!("[Process Check] Port 18789 status: {}", if in_use { "in use" } else { "available" });

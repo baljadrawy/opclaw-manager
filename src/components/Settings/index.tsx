@@ -65,6 +65,17 @@ interface SubagentDefaults {
   max_spawn_depth: number | null;
   max_children_per_agent: number | null;
   max_concurrent: number | null;
+  attachments_enabled: boolean | null;
+  attachments_max_total_bytes: number | null;
+}
+
+interface PdfConfig {
+  max_pages: number | null;
+  max_bytes_mb: number | null;
+}
+
+interface MemoryConfig {
+  provider: string | null;
 }
 
 export function Settings({ onEnvironmentChange }: SettingsProps) {
@@ -94,21 +105,30 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
   const [compaction, setCompaction] = useState<CompactionConfig>({ enabled: false, threshold: null, context_pruning: false, max_context_messages: null });
   const [workspace, setWorkspace] = useState<WorkspaceConfig>({ workspace: null, timezone: null, time_format: null, skip_bootstrap: false, bootstrap_max_chars: null });
   const [gateway, setGateway] = useState<GatewayConfig>({ port: 3000, log_level: 'info' });
-  const [subagentDefaults, setSubagentDefaults] = useState<SubagentDefaults>({ max_spawn_depth: null, max_children_per_agent: null, max_concurrent: null });
+  const [subagentDefaults, setSubagentDefaults] = useState<SubagentDefaults>({ max_spawn_depth: null, max_children_per_agent: null, max_concurrent: null, attachments_enabled: null, attachments_max_total_bytes: null });
+  const [toolsProfile, setToolsProfile] = useState<string>('messaging');
+  const [pdfConfig, setPdfConfig] = useState<PdfConfig>({ max_pages: null, max_bytes_mb: null });
+  const [memoryConfig, setMemoryConfig] = useState<MemoryConfig>({ provider: null });
   const [appVersion, setAppVersion] = useState<string>('...');
+
+  const [validating, setValidating] = useState(false);
+  const [validateStatus, setValidateStatus] = useState<{ success: boolean; message: string } | null>(null);
 
   // Load initial data
   useEffect(() => {
     const loadConfig = async () => {
       setLoading(true);
       try {
-        const [br, web, comp, ws, gw, sub] = await Promise.all([
+        const [br, web, comp, ws, gw, sub, profile, pdf, mem] = await Promise.all([
           invoke<BrowserConfig>('get_browser_config'),
           invoke<WebConfig>('get_web_config'),
           invoke<CompactionConfig>('get_compaction_config'),
           invoke<WorkspaceConfig>('get_workspace_config'),
           invoke<GatewayConfig>('get_gateway_config'),
           invoke<SubagentDefaults>('get_subagent_defaults'),
+          invoke<string>('get_tools_profile'),
+          invoke<PdfConfig>('get_pdf_config'),
+          invoke<MemoryConfig>('get_memory_config'),
         ]);
         setBrowser(br);
         setWebConfig(web);
@@ -116,6 +136,9 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
         setWorkspace(ws);
         setGateway(gw);
         setSubagentDefaults(sub);
+        setToolsProfile(profile);
+        setPdfConfig(pdf);
+        setMemoryConfig(mem);
 
         if (isTauri()) {
           const { getVersion } = await import('@tauri-apps/api/app');
@@ -152,6 +175,9 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
         }),
         invoke('save_gateway_config', { port: gateway.port, logLevel: gateway.log_level }),
         invoke('save_subagent_defaults', { defaults: subagentDefaults }),
+        invoke('save_tools_profile', { profile: toolsProfile }),
+        invoke('save_pdf_config', { pdfConfig }),
+        invoke('save_memory_config', { memoryConfig }),
       ]);
 
       setSaveSuccess(true);
@@ -161,6 +187,23 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
       alert('Failed to save settings: ' + String(e));
     } finally {
       setSaving(false);
+    }
+  };
+
+  const handleValidate = async () => {
+    setValidating(true);
+    setValidateStatus(null);
+    try {
+      // Get the currently saved config, not the draft (so user must save first, or we auto-save, but it's simpler to just validate what's saved)
+      const currentConfig = await invoke<any>('get_config');
+      const jsonStr = JSON.stringify(currentConfig, null, 2);
+
+      await invoke<string>('validate_openclaw_config', { configJson: jsonStr });
+      setValidateStatus({ success: true, message: 'Configuration is valid according to the CLI schema.' });
+    } catch (e) {
+      setValidateStatus({ success: false, message: String(e) });
+    } finally {
+      setValidating(false);
     }
   };
 
@@ -375,6 +418,21 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
                 <p className="text-xs text-gray-500 mt-1">Maximum number of recent messages to keep.</p>
               </div>
             )}
+
+            <div className="flex items-center justify-between p-4 bg-dark-600 rounded-lg">
+              <div>
+                <p className="text-sm text-white">Local Memory Search</p>
+                <p className="text-xs text-gray-500">Enable offline embeddings mapping</p>
+              </div>
+              <select
+                value={memoryConfig.provider || ''}
+                onChange={e => setMemoryConfig({ ...memoryConfig, provider: e.target.value || null })}
+                className="input-base w-auto min-w-[120px]"
+              >
+                <option value="">None (Disabled)</option>
+                <option value="ollama">Ollama</option>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -516,6 +574,35 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
               <p className="text-xs text-gray-600 mt-1">System-wide</p>
             </div>
           </div>
+
+          <div className="mt-4 pt-4 border-t border-dark-600">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <p className="text-sm text-white">Inline File Attachments</p>
+                <p className="text-xs text-gray-500">Allow subagents to process files</p>
+              </div>
+              <input
+                type="checkbox"
+                checked={subagentDefaults.attachments_enabled || false}
+                onChange={e => setSubagentDefaults({ ...subagentDefaults, attachments_enabled: e.target.checked })}
+                className="w-5 h-5 rounded bg-dark-500 border-dark-400 text-claw-500 focus:ring-claw-500/50"
+              />
+            </div>
+
+            {subagentDefaults.attachments_enabled && (
+              <div className="pl-4 border-l-2 border-dark-600">
+                <label className="block text-sm text-gray-400 mb-2">Max Total Size (Bytes)</label>
+                <input
+                  type="number"
+                  value={subagentDefaults.attachments_max_total_bytes || ''}
+                  onChange={e => setSubagentDefaults({ ...subagentDefaults, attachments_max_total_bytes: parseInt(e.target.value) || null })}
+                  placeholder="e.g. 5242880 (5MB)"
+                  className="input-base"
+                />
+                <p className="text-xs text-gray-500 mt-1">Limit across standard session attachment drops.</p>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Configuration Management */}
@@ -545,6 +632,21 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
               <Upload size={16} />
               Import Config
             </button>
+          </div>
+          <div className="mt-4 pt-4 border-t border-dark-600">
+            <button
+              onClick={handleValidate}
+              disabled={validating}
+              className="w-full flex items-center justify-center gap-2 p-3 bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors text-sm text-white border border-dark-500 hover:border-dark-400"
+            >
+              {validating ? <Loader2 size={16} className="animate-spin" /> : <CheckCircle size={16} />}
+              Validate Config Schema
+            </button>
+            {validateStatus && (
+              <div className={`mt-3 p-3 rounded-lg text-sm border ${validateStatus.success ? 'bg-green-900/20 border-green-800/30 text-green-400' : 'bg-red-900/20 border-red-800/30 text-red-400 whitespace-pre-line'}`}>
+                {validateStatus.message}
+              </div>
+            )}
           </div>
         </div>
 
@@ -590,6 +692,62 @@ export function Settings({ onEnvironmentChange }: SettingsProps) {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Tools & Security */}
+        <div className="bg-dark-700 rounded-2xl p-6 border border-dark-500">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center">
+              <Server size={20} className="text-red-400" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-white">Tools & Security</h3>
+              <p className="text-xs text-gray-500">Manage tool access profiles and settings</p>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm text-gray-400 mb-2">Security Profile</label>
+              <select
+                value={toolsProfile}
+                onChange={e => setToolsProfile(e.target.value)}
+                className="input-base"
+              >
+                <option value="messaging">Messaging (Safest)</option>
+                <option value="minimal">Minimal</option>
+                <option value="coding">Coding</option>
+                <option value="full">Full Access</option>
+              </select>
+              <p className="text-xs text-gray-500 mt-1">Configures baseline allowlist for built-in tools across all agents.</p>
+            </div>
+
+            <div className="pt-4 border-t border-dark-600">
+              <h4 className="text-sm font-medium text-white mb-4">Native PDF Support</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm text-gray-400 mb-2">Max Pages</label>
+                  <input
+                    type="number"
+                    value={pdfConfig.max_pages || ''}
+                    onChange={e => setPdfConfig({ ...pdfConfig, max_pages: parseInt(e.target.value) || null })}
+                    placeholder="e.g. 10"
+                    className="input-base"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm text-gray-400 mb-2">Max Size (MB)</label>
+                  <input
+                    type="number"
+                    value={pdfConfig.max_bytes_mb || ''}
+                    onChange={e => setPdfConfig({ ...pdfConfig, max_bytes_mb: parseFloat(e.target.value) || null })}
+                    placeholder="e.g. 5"
+                    className="input-base"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Web Search Config */}
