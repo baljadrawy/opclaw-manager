@@ -112,16 +112,25 @@ fn find_all_port_pids(port: u16) -> Vec<u32> {
     pids
 }
 
-/// Get service status (simple version: directly check port usage)
+/// Get service status
+/// Uses openclaw gateway health to verify the gateway is actually responding,
+/// not just that the port is busy (which could be svchost.exe or another process).
 #[command]
 pub async fn get_service_status() -> Result<ServiceStatus, String> {
-    // Simple and direct: check if port is in use
+    // Primary check: use gateway health RPC to verify the gateway is actually running
+    let health_ok = match shell::run_openclaw(&["gateway", "health", "--timeout", "3000"]) {
+        Ok(_) => true,
+        Err(_) => false,
+    };
+
     let pid = check_port_listening(SERVICE_PORT);
-    let running = pid.is_some();
+    
+    // Gateway is running only if health check passes AND port is occupied
+    let running = health_ok && pid.is_some();
     
     Ok(ServiceStatus {
         running,
-        pid,
+        pid: if running { pid } else { None },
         port: SERVICE_PORT,
         uptime_seconds: None,
         memory_mb: None,
@@ -134,10 +143,10 @@ pub async fn get_service_status() -> Result<ServiceStatus, String> {
 pub async fn start_service() -> Result<String, String> {
     info!("[Service] Starting service...");
 
-    // Check if already running
-    let status = get_service_status().await?;
-    if status.running {
-        info!("[Service] Service is already running");
+    // Check if already running via health check
+    let health_ok = shell::run_openclaw(&["gateway", "health", "--timeout", "2000"]).is_ok();
+    if health_ok {
+        info!("[Service] Service is already running (health check passed)");
         return Err("Service is already running".to_string());
     }
 
@@ -149,29 +158,57 @@ pub async fn start_service() -> Result<String, String> {
     }
     info!("[Service] openclaw path: {:?}", openclaw_path);
 
-    // Start gateway in background directly (do not wait for doctor, avoid blocking)
+    // Clear any processes squatting on the port (e.g. svchost.exe)
+    let squatter_pids = find_all_port_pids(SERVICE_PORT);
+    if !squatter_pids.is_empty() {
+        info!("[Service] Found {} process(es) on port {}, killing...", squatter_pids.len(), SERVICE_PORT);
+        for pid in &squatter_pids {
+            #[cfg(windows)]
+            {
+                let mut cmd = Command::new("taskkill");
+                cmd.args(["/F", "/PID", &pid.to_string()]);
+                cmd.creation_flags(CREATE_NO_WINDOW);
+                let _ = cmd.output();
+            }
+            #[cfg(unix)]
+            {
+                let _ = Command::new("kill").args(["-9", &pid.to_string()]).output();
+            }
+        }
+        // Wait for port to free up
+        std::thread::sleep(std::time::Duration::from_millis(1500));
+    }
+
+    // Start gateway in background
     info!("[Service] Starting gateway in background...");
     shell::spawn_openclaw_gateway()
         .map_err(|e| format!("Failed to start service: {}", e))?;
 
-    // Poll and wait for port to start listening (max 15 seconds)
+    // Phase 1: Wait for port to become active (fast check, 1s intervals, max 15s)
     info!("[Service] Waiting for port {} to start listening...", SERVICE_PORT);
-    let mut started = false;
+    let mut port_up = false;
     for i in 1..=15 {
         std::thread::sleep(std::time::Duration::from_secs(1));
-        if let Some(pid) = check_port_listening(SERVICE_PORT) {
-            info!("[Service] Successfully started ({}s), PID: {}", i, pid);
-            started = true;
+        if check_port_listening(SERVICE_PORT).is_some() {
+            info!("[Service] Port {} is now active ({}s)", SERVICE_PORT, i);
+            port_up = true;
             break;
         }
-        if i % 3 == 0 {
-            debug!("[Service] Waiting... ({}s)", i);
-        }
+    }
+    if !port_up {
+        return Err("Service start timeout: port not listening after 15s".to_string());
     }
 
-    if !started {
-        info!("[Service] Wait timeout, port still not listening");
-        return Err("Service start timeout (15s), please check openclaw logs".to_string());
+    // Phase 2: Verify gateway is healthy (one attempt with generous timeout)
+    info!("[Service] Verifying gateway health...");
+    std::thread::sleep(std::time::Duration::from_secs(2));
+    let health_ok = shell::run_openclaw(&["gateway", "health", "--timeout", "5000"]).is_ok();
+    let pid = check_port_listening(SERVICE_PORT);
+
+    if health_ok {
+        info!("[Service] Gateway is healthy!");
+    } else {
+        warn!("[Service] Gateway health check failed, port is active but gateway may still be initializing");
     }
 
     // Reset stop flag
@@ -181,7 +218,7 @@ pub async fn start_service() -> Result<String, String> {
     thread::spawn(|| {
         info!("[Service Supervisor] Thread started");
         loop {
-            thread::sleep(Duration::from_secs(5));
+            thread::sleep(Duration::from_secs(10));
 
             // If stop was intentional, exit supervisor
             if INTENTIONAL_STOP.load(Ordering::Relaxed) {
@@ -189,9 +226,9 @@ pub async fn start_service() -> Result<String, String> {
                 break;
             }
 
-            // Check if service is running
-            if check_port_listening(SERVICE_PORT).is_none() {
-                warn!("[Service Supervisor] Service stopped unexpectedly! Restarting...");
+            // Check if service is running via health check
+            if shell::run_openclaw(&["gateway", "health", "--timeout", "3000"]).is_err() {
+                warn!("[Service Supervisor] Gateway health check failed! Restarting...");
                 
                 // Double check flag just in case
                 if INTENTIONAL_STOP.load(Ordering::Relaxed) { break; }
@@ -201,7 +238,7 @@ pub async fn start_service() -> Result<String, String> {
                 } else {
                     info!("[Service Supervisor] Restart command sent");
                     // Wait for it to come up so we don't spam restarts
-                    thread::sleep(Duration::from_secs(10));
+                    thread::sleep(Duration::from_secs(15));
                 }
             }
         }
@@ -287,38 +324,54 @@ pub async fn restart_service() -> Result<String, String> {
     info!("[Service] Restarting service...");
 
     // Step 1: Stop the service if it's running
-    // Step 1: Stop the service if it's running
     match stop_service().await {
         Ok(_) => {
             info!("[Service] Service stopped successfully");
-            // Wait a bit to ensure port is freed
-            std::thread::sleep(std::time::Duration::from_millis(1000));
+            std::thread::sleep(std::time::Duration::from_millis(2000));
         }
         Err(e) => {
             info!("[Service] Failed to stop service: {}, trying to continue anyway...", e);
         }
     }
-    
-    // Double check port is free
-    if check_port_listening(SERVICE_PORT).is_some() {
-         return Err(format!("Port {} is still in use after stop attempt", SERVICE_PORT));
+
+    // Step 2: Clear any remaining processes on the port
+    let squatter_pids = find_all_port_pids(SERVICE_PORT);
+    if !squatter_pids.is_empty() {
+        info!("[Service] Clearing {} process(es) still on port {}...", squatter_pids.len(), SERVICE_PORT);
+        for pid in &squatter_pids {
+            #[cfg(windows)]
+            {
+                let mut cmd = Command::new("taskkill");
+                cmd.args(["/F", "/PID", &pid.to_string()]);
+                cmd.creation_flags(CREATE_NO_WINDOW);
+                let _ = cmd.output();
+            }
+            #[cfg(unix)]
+            {
+                let _ = Command::new("kill").args(["-9", &pid.to_string()]).output();
+            }
+        }
+        std::thread::sleep(std::time::Duration::from_millis(1500));
     }
 
-    // Step 2: Start the service
+    // Step 3: Start the gateway
     info!("[Service] Starting gateway in background...");
     shell::spawn_openclaw_gateway()
         .map_err(|e| format!("Failed to start service: {}", e))?;
 
-    // Step 3: Poll and wait for port to start listening (max 15 seconds)
+    // Step 4: Wait for port to become active (max 15s)
     info!("[Service] Waiting for port {} to start listening...", SERVICE_PORT);
     for i in 1..=15 {
         std::thread::sleep(std::time::Duration::from_secs(1));
-        if let Some(pid) = check_port_listening(SERVICE_PORT) {
-            info!("[Service] Successfully restarted ({}s), PID: {}", i, pid);
-            return Ok(format!("Service restarted, PID: {}", pid));
-        }
-        if i % 3 == 0 {
-            debug!("[Service] Waiting... ({}s)", i);
+        if check_port_listening(SERVICE_PORT).is_some() {
+            info!("[Service] Port {} is now active ({}s)", SERVICE_PORT, i);
+            // Give gateway a moment to fully initialize
+            std::thread::sleep(std::time::Duration::from_secs(2));
+            if let Some(pid) = check_port_listening(SERVICE_PORT) {
+                info!("[Service] Successfully restarted, PID: {}", pid);
+                return Ok(format!("Service restarted, PID: {}", pid));
+            }
+            return Ok("Service restarted".to_string());
         }
     }
 
@@ -331,7 +384,7 @@ pub async fn restart_service() -> Result<String, String> {
 pub async fn get_logs(lines: Option<u32>) -> Result<Vec<String>, String> {
     let n = lines.unwrap_or(100);
 
-    match shell::run_openclaw(&["logs", "--lines", &n.to_string()]) {
+    match shell::run_openclaw(&["logs", "--limit", &n.to_string()]) {
         Ok(output) => {
             Ok(output.lines().map(|s| s.to_string()).collect())
         }

@@ -299,6 +299,7 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             default_base_url: Some("https://api.anthropic.com".to_string()),
             api_type: "anthropic-messages".to_string(),
             requires_api_key: true,
+            default_api_key: None,
             docs_url: Some("https://docs.openclaw.ai/providers/anthropic".to_string()),
             suggested_models: vec![
                 SuggestedModel {
@@ -326,6 +327,7 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             default_base_url: Some("https://api.openai.com/v1".to_string()),
             api_type: "openai-completions".to_string(),
             requires_api_key: true,
+            default_api_key: None,
             docs_url: Some("https://docs.openclaw.ai/providers/openai".to_string()),
             suggested_models: vec![
                 SuggestedModel {
@@ -353,6 +355,7 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             default_base_url: Some("https://api.moonshot.cn/v1".to_string()),
             api_type: "openai-completions".to_string(),
             requires_api_key: true,
+            default_api_key: None,
             docs_url: Some("https://docs.openclaw.ai/providers/moonshot".to_string()),
             suggested_models: vec![
                 SuggestedModel {
@@ -380,6 +383,7 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             default_base_url: Some("https://dashscope.aliyuncs.com/compatible-mode/v1".to_string()),
             api_type: "openai-completions".to_string(),
             requires_api_key: true,
+            default_api_key: None,
             docs_url: Some("https://docs.openclaw.ai/providers/qwen".to_string()),
             suggested_models: vec![
                 SuggestedModel {
@@ -407,6 +411,7 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             default_base_url: Some("https://api.deepseek.com".to_string()),
             api_type: "openai-completions".to_string(),
             requires_api_key: true,
+            default_api_key: None,
             docs_url: None,
             suggested_models: vec![
                 SuggestedModel {
@@ -431,9 +436,10 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             id: "glm".to_string(),
             name: "GLM (Zhipu)".to_string(),
             icon: "🔷".to_string(),
-            default_base_url: Some("https://open.bigmodel.cn/api/paas/v4".to_string()),
-            api_type: "openai-completions".to_string(),
+            default_base_url: Some("https://api.z.ai/api/anthropic".to_string()),
+            api_type: "anthropic-messages".to_string(),
             requires_api_key: true,
+            default_api_key: None,
             docs_url: Some("https://docs.openclaw.ai/providers/glm".to_string()),
             suggested_models: vec![
                 SuggestedModel {
@@ -453,6 +459,7 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             default_base_url: Some("https://api.minimax.io/anthropic".to_string()),
             api_type: "anthropic-messages".to_string(),
             requires_api_key: true,
+            default_api_key: None,
             docs_url: Some("https://docs.openclaw.ai/providers/minimax".to_string()),
             suggested_models: vec![
                 SuggestedModel {
@@ -472,6 +479,7 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             default_base_url: Some("https://api.venice.ai/api/v1".to_string()),
             api_type: "openai-completions".to_string(),
             requires_api_key: true,
+            default_api_key: None,
             docs_url: Some("https://docs.openclaw.ai/providers/venice".to_string()),
             suggested_models: vec![
                 SuggestedModel {
@@ -491,6 +499,7 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             default_base_url: Some("https://openrouter.ai/api/v1".to_string()),
             api_type: "openai-completions".to_string(),
             requires_api_key: true,
+            default_api_key: None,
             docs_url: Some("https://docs.openclaw.ai/providers/openrouter".to_string()),
             suggested_models: vec![
                 SuggestedModel {
@@ -507,16 +516,17 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             id: "ollama".to_string(),
             name: "Ollama (Local)".to_string(),
             icon: "🟠".to_string(),
-            default_base_url: Some("http://localhost:11434".to_string()),
-            api_type: "openai-completions".to_string(),
+            default_base_url: Some("http://127.0.0.1:11434/v1".to_string()),
+            api_type: "ollama".to_string(),
             requires_api_key: false,
+            default_api_key: Some("ollama-local".to_string()),
             docs_url: Some("https://docs.openclaw.ai/providers/ollama".to_string()),
             suggested_models: vec![
                 SuggestedModel {
-                    id: "llama3".to_string(),
-                    name: "Llama 3".to_string(),
+                    id: "qwen3.5:9b".to_string(),
+                    name: "qwen3.5:9b".to_string(),
                     description: Some("Run locally".to_string()),
-                    context_window: Some(8192),
+                    context_window: Some(262144),
                     max_tokens: Some(4096),
                     recommended: true,
                 },
@@ -529,6 +539,7 @@ pub async fn get_official_providers() -> Result<Vec<OfficialProvider>, String> {
             default_base_url: Some("https://generativelanguage.googleapis.com/v1beta/openai/".to_string()),
             api_type: "openai-completions".to_string(),
             requires_api_key: true,
+            default_api_key: None,
             docs_url: Some("https://ai.google.dev/gemini-api/docs/openai".to_string()),
             suggested_models: vec![
                 SuggestedModel {
@@ -1314,6 +1325,53 @@ pub async fn openclaw_config_set(key: String, value: String) -> Result<String, S
 
     info!("[Config CLI] Set result: {}", result);
     Ok(format!("Set {} = {}", key, value))
+}
+
+/// Validate a given config JSON string by writing to a temporary file and running openclaw config validate --json
+#[command]
+pub async fn validate_openclaw_config(config_json: String) -> Result<String, String> {
+    info!("[Config CLI] Validating config json");
+    
+    // Create a temporary file
+    let temp_dir = std::env::temp_dir();
+    let temp_file = temp_dir.join(format!("openclaw_config_{}.json", std::process::id()));
+    
+    std::fs::write(&temp_file, &config_json)
+        .map_err(|e| format!("Failed to write temp config file: {}", e))?;
+
+    let temp_file_str = temp_file.to_string_lossy().to_string();
+    
+    let openclaw_path = crate::utils::shell::get_openclaw_path().ok_or_else(|| {
+        let _ = std::fs::remove_file(&temp_file);
+        "Cannot find openclaw command".to_string()
+    })?;
+
+    let mut cmd = std::process::Command::new(&openclaw_path);
+    cmd.args(&["config", "validate", "--json"]);
+    cmd.env("OPENCLAW_CONFIG", &temp_file_str);
+    cmd.env("PATH", crate::utils::shell::get_extended_path());
+    
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        cmd.creation_flags(0x08000000); // CREATE_NO_WINDOW
+    }
+
+    let output = cmd.output().map_err(|e| {
+        let _ = std::fs::remove_file(&temp_file);
+        format!("Failed to execute config validate: {}", e)
+    })?;
+
+    let _ = std::fs::remove_file(&temp_file);
+
+    let stdout = String::from_utf8_lossy(&output.stdout).to_string();
+    let stderr = String::from_utf8_lossy(&output.stderr).to_string();
+
+    if output.status.success() {
+        Ok(stdout)
+    } else {
+        Err(if !stderr.is_empty() { stderr } else { stdout })
+    }
 }
 
 /// Test an MCP server connectivity
@@ -2316,6 +2374,100 @@ pub struct AgentInfo {
     pub default: Option<bool>,
     pub subagents: Option<SubagentConfig>,
 }
+// ============ New 2026.3.2 Features Configuration ============
+
+/// Security profile for tools access
+#[command]
+pub async fn get_tools_profile() -> Result<String, String> {
+    info!("[Config] Getting tools profile...");
+    let config = load_openclaw_config()?;
+    let profile = config
+        .pointer("/tools/profile")
+        .and_then(|v| v.as_str())
+        .unwrap_or("messaging")
+        .to_string();
+    Ok(profile)
+}
+
+#[command]
+pub async fn save_tools_profile(profile: String) -> Result<String, String> {
+    info!("[Config] Saving tools profile: {}", profile);
+    let mut config = load_openclaw_config()?;
+    if config.get("tools").is_none() {
+        config["tools"] = json!({});
+    }
+    config["tools"]["profile"] = json!(profile);
+    save_openclaw_config(&config)?;
+    Ok("Tools profile saved".to_string())
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct PdfConfig {
+    #[serde(alias = "pdfMaxPages", alias = "max_pages")]
+    pub max_pages: Option<u64>,
+    #[serde(alias = "pdfMaxBytesMb", alias = "max_bytes_mb")]
+    pub max_bytes_mb: Option<f64>,
+}
+
+#[command]
+pub async fn get_pdf_config() -> Result<PdfConfig, String> {
+    info!("[Config] Getting PDF config...");
+    let config = load_openclaw_config()?;
+    let max_pages = config.get("pdfMaxPages").and_then(|v| v.as_u64());
+    let max_bytes_mb = config.get("pdfMaxBytesMb").and_then(|v| v.as_f64());
+    Ok(PdfConfig { max_pages, max_bytes_mb })
+}
+
+#[command]
+pub async fn save_pdf_config(pdf_config: PdfConfig) -> Result<String, String> {
+    info!("[Config] Saving PDF config...");
+    let mut config = load_openclaw_config()?;
+    if let Some(pages) = pdf_config.max_pages {
+        config["pdfMaxPages"] = json!(pages);
+    } else if let Some(obj) = config.as_object_mut() {
+        obj.remove("pdfMaxPages");
+    }
+    if let Some(mb) = pdf_config.max_bytes_mb {
+        config["pdfMaxBytesMb"] = json!(mb);
+    } else if let Some(obj) = config.as_object_mut() {
+        obj.remove("pdfMaxBytesMb");
+    }
+    save_openclaw_config(&config)?;
+    Ok("PDF config saved".to_string())
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct MemoryConfig {
+    pub provider: Option<String>,
+}
+
+#[command]
+pub async fn get_memory_config() -> Result<MemoryConfig, String> {
+    info!("[Config] Getting memory config...");
+    let config = load_openclaw_config()?;
+    let provider = config
+        .pointer("/memorySearch/provider")
+        .and_then(|v| v.as_str())
+        .map(|s| s.to_string());
+    Ok(MemoryConfig { provider })
+}
+
+#[command]
+pub async fn save_memory_config(memory_config: MemoryConfig) -> Result<String, String> {
+    info!("[Config] Saving memory config...");
+    let mut config = load_openclaw_config()?;
+    if let Some(provider) = memory_config.provider {
+        if config.get("memorySearch").is_none() {
+            config["memorySearch"] = json!({});
+        }
+        config["memorySearch"]["provider"] = json!(provider);
+    } else if let Some(obj) = config.as_object_mut() {
+        obj.remove("memorySearch");
+    }
+    save_openclaw_config(&config)?;
+    Ok("Memory config saved".to_string())
+}
+
 
 /// Per-agent subagent configuration
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
@@ -2333,6 +2485,10 @@ pub struct SubagentDefaults {
     pub max_children_per_agent: Option<u32>,
     #[serde(alias = "maxConcurrent", alias = "max_concurrent")]
     pub max_concurrent: Option<u32>,
+    #[serde(alias = "attachmentsEnabled", alias = "attachments_enabled")]
+    pub attachments_enabled: Option<bool>,
+    #[serde(alias = "attachmentsMaxTotalBytes", alias = "attachments_max_total_bytes")]
+    pub attachments_max_total_bytes: Option<u64>,
 }
 
 /// Agent binding rule
@@ -2432,15 +2588,23 @@ pub async fn get_agents_config() -> Result<AgentsConfigResponse, String> {
         }
     }
 
-    // Read global subagent defaults from agents.defaults.subagents
+    // Read global subagent defaults from agents.defaults.subagents and tools.sessions_spawn.attachments
     let subagent_defaults = if let Some(sub_val) = config.pointer("/agents/defaults/subagents") {
         SubagentDefaults {
             max_spawn_depth: sub_val.get("maxSpawnDepth").and_then(|v| v.as_u64()).map(|v| v as u32),
             max_children_per_agent: sub_val.get("maxChildrenPerAgent").and_then(|v| v.as_u64()).map(|v| v as u32),
             max_concurrent: sub_val.get("maxConcurrent").and_then(|v| v.as_u64()).map(|v| v as u32),
+            attachments_enabled: config.pointer("/tools/sessions_spawn/attachments/enabled").and_then(|v| v.as_bool()),
+            attachments_max_total_bytes: config.pointer("/tools/sessions_spawn/attachments/maxTotalBytes").and_then(|v| v.as_u64()),
         }
     } else {
-        SubagentDefaults::default()
+        SubagentDefaults {
+            max_spawn_depth: None,
+            max_children_per_agent: None,
+            max_concurrent: None,
+            attachments_enabled: config.pointer("/tools/sessions_spawn/attachments/enabled").and_then(|v| v.as_bool()),
+            attachments_max_total_bytes: config.pointer("/tools/sessions_spawn/attachments/maxTotalBytes").and_then(|v| v.as_u64()),
+        }
     };
 
     info!("[Agents] Found {} agents, {} bindings", agents.len(), bindings.len());
@@ -2607,7 +2771,7 @@ pub async fn save_agent(agent: AgentInfo) -> Result<String, String> {
              let default_models = json!({
                 "providers": {
                     "glm": {
-                        "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+                        "baseUrl": "https://api.z.ai/api/anthropic",
                         "apiKey": "",
                         "models": [ 
                             {
@@ -2801,6 +2965,26 @@ pub async fn save_subagent_defaults(defaults: SubagentDefaults) -> Result<String
     }
 
     config["agents"]["defaults"]["subagents"] = sub_obj;
+
+    // Subagent sessions_spawn inline file attachments
+    if defaults.attachments_enabled.is_some() || defaults.attachments_max_total_bytes.is_some() {
+        if config.get("tools").is_none() {
+            config["tools"] = json!({});
+        }
+        if config["tools"].get("sessions_spawn").is_none() {
+            config["tools"]["sessions_spawn"] = json!({});
+        }
+        if config["tools"]["sessions_spawn"].get("attachments").is_none() {
+            config["tools"]["sessions_spawn"]["attachments"] = json!({});
+        }
+
+        if let Some(enabled) = defaults.attachments_enabled {
+            config["tools"]["sessions_spawn"]["attachments"]["enabled"] = json!(enabled);
+        }
+        if let Some(max_bytes) = defaults.attachments_max_total_bytes {
+            config["tools"]["sessions_spawn"]["attachments"]["maxTotalBytes"] = json!(max_bytes);
+        }
+    }
 
     save_openclaw_config(&config)?;
     Ok("Subagent defaults saved".to_string())

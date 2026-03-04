@@ -214,6 +214,8 @@ pub struct OfficialProvider {
     pub suggested_models: Vec<SuggestedModel>,
     /// Whether API Key is required
     pub requires_api_key: bool,
+    /// Default API Key
+    pub default_api_key: Option<String>,
     /// Documentation URL
     pub docs_url: Option<String>,
 }

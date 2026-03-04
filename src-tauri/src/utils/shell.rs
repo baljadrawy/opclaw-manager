@@ -562,12 +562,12 @@ pub fn spawn_openclaw_gateway() -> io::Result<()> {
     let mut cmd = if platform::is_windows() && openclaw_path.ends_with(".cmd") {
         info!("[Shell] Windows mode: executing .cmd directly");
         let mut c = Command::new(&openclaw_path);
-        c.args(["gateway", "--port", "18789"]);
+        c.args(["gateway", "run", "--port", "18789"]);
         c
     } else {
         info!("[Shell] Unix/Direct mode: executing directly");
         let mut c = Command::new(&openclaw_path);
-        c.args(["gateway", "--port", "18789"]);
+        c.args(["gateway", "run", "--port", "18789"]);
         c
     };
     
